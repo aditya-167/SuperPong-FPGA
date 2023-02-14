@@ -1,1 +1,3 @@
-Empty application. Add your own sources.
+draw - drawing commands.
+
+graphics - graphics routines.

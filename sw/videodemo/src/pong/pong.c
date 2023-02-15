@@ -1,29 +1,10 @@
 #include "./pong.h"
 
-bool initialize(void){
-
-    if (SDL_Init(SDL_INIT_VIDEO)!=0){
-        fprintf(stderr, "failed initialize SDL: %s\n", SDL_GetError());
-        return false;
-    }
+bool initialize(ball_struct *ball, player_pad *pad1, player_pad *pad2){
     
-    window = SDL_CreateWindow("SUPER PONG",
-                                        SDL_WINDOWPOS_UNDEFINED,
-                                        SDL_WINDOWPOS_UNDEFINED,
-                                        WIDTH,HEIGHT,
-                                        SDL_WINDOW_SHOWN);
-    if (!window){
-        return false;
-    }
-
-    renderer = SDL_CreateRenderer(window, -1,  
-                                 SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    if (!window){
-        return false;
-    }
-    ball = InitBall(BALLSIZE);
-    pad1 = InitPlayerPad();
-    pad2 = InitPlayerPad();
+    *ball = init_ball();
+    *pad1 = init_player_pad();
+    *pad2 = init_player_pad();
     return true;
 
 }
@@ -50,7 +31,7 @@ void shutdown(void){
     SDL_Quit();
 }
 
-ball_struct inti_ball(int size){
+ball_struct init_ball(int size){
     const float VEL= BALLVEL;
     BallStruct ball = {
         .x = WIDTH/2 - size/2,
@@ -91,9 +72,9 @@ void update_ball(ball_struct *ball, float t_elapse){
 
 }
 
-player_pad InitPlayerPad(void){
-    PlayerPad pad = {
-        .yPos = HEIGHT/2,
+player_pad init_player_pad(void){
+    player_pad pad = {
+        .yPos = SCREEN_HEIGHT/2,
     };
     return pad;
 

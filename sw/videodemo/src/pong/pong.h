@@ -7,9 +7,14 @@
 #include <math.h>
 #include <time.h>
 
-#ifdef WIN32
-	#include <SDL2/SDL.h>
-#endif
+#define SCREEN_HEIGHT 480;
+#define SCREEN_WIDTH 640;
+#define BALLVEL 130;
+#define BALLSIZE 10;
+#define PLAYERPAD_WIDTH 22;
+#define PLAYERPAD_HEIGHT 75;
+#define PLAYERPAD_MARGIN 10;
+#define PLAYERPAD_VELOCITY 180.0f;
 
 // Ball structure
 typedef struct ball_struct{
@@ -27,14 +32,14 @@ typedef struct player_pad{
 } player_pad;
 
 // Game functions
-bool initialize(void);
+bool initialize(ball_struct *ball, player_pad *pad1, player_pad *pad2);
 void update(float);
 void shutdown(void);
 void scoreUpdate(int, int);
 
 // Ball functions
-void render_ball(const BallStruct *);
-void update_ball(BallStruct *, float);
+void render_ball(const ball_struct *);
+void update_ball(ball_struct *, float);
 
 ball_struct init_ball(int size);
 

@@ -3,3 +3,4 @@ SDK.log
 sw/RemoteSystemsTempFiles/*
 *RemoteSystemsTempFiles*
 *.o
+*.exe

@@ -35,7 +35,6 @@ void drawRect(int x_start, int y_start, int width, int height, int r, int g, int
 // Draw Pixel at co-ordinates specified by x and y of colour (r, g, b).
 void drawPixel(int x,int y,int r,int g,int b, GraphicsContext *gc);
 
-
 // Draw pixels based on a specific buffer
 void drawBuffer(int x, int y, int width, int height, char* bufPtr, GraphicsContext *gc);
 

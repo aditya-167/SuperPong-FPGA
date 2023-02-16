@@ -30,6 +30,7 @@
 
 #include "xil_types.h"
 #include "draw/draw.h"
+#include "pong/pong.h"
 
 /*
  * Configure the Video capture driver to start streaming on signal
@@ -50,6 +51,8 @@ void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 str
 void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoISR(void *callBackRef, void *pVideo);
 
+/* ------------------------------------------------------------ */
+void game_loop();
 /* ------------------------------------------------------------ */
 
 /************************************************************************/

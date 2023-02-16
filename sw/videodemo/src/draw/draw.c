@@ -178,17 +178,17 @@ void DemoPrintTest1(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 void DemoPrintTest2(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
-	GraphicsContext myGC = createGC(stride, frame);
+	graphics_context myGC = createGC(stride, frame);
 
 	int px = 0;
 
-	for (int i = 0; i < 500; i+=10) {
+	for (int i = 0; i < 500; i += 10) {
 
 		drawRect(px, px, 10, 10, 0, 0, 0, &myGC);
 		drawRect(i, i, 10, 10, 255, 255, 255, &myGC);
 		Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 		px = i;
-		usleep(33333*4);
+		usleep(33333 * 4);
 
 	}
 
@@ -200,8 +200,8 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 	int xcoi, ycoi;
 	int iPixelAddr;
-	int draw_width = 256;
-	int draw_height = 256;
+	int draw_width = 640;
+	int draw_height = 480;
 
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
@@ -215,7 +215,6 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 			int red = ((((arr[addr] & 0xE0) >> 5) / 7)) * offset;
 			int green = ((((arr[addr] & 0x1C) >> 2)) / 7) * offset;
 			int blue = ((arr[addr] & 0x3) / 3) * offset;
-
 			frame[iPixelAddr] = green; // green
 			frame[iPixelAddr + 1] = blue; // blue
 			frame[iPixelAddr + 2] = red; // red

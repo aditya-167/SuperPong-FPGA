@@ -7,16 +7,16 @@
 
 #include "../graphics/graphics.h"
 
-struct GraphicsContext createGC(int stride, u8* frame) {
+graphics_context createGC(int stride, u8* frame) {
 
-	GraphicsContext gc;
+	graphics_context gc;
 	gc.stride = stride;
 	gc.frame = frame;
 	return gc;
 
 }
 
-void drawPixel(int x, int y, int r, int g, int b, GraphicsContext *gc) {
+void drawPixel(int x, int y, int r, int g, int b, graphics_context *gc) {
 
 	int iPixelAddr = x + (gc->stride * y);
 	gc->frame[iPixelAddr] = r;
@@ -26,7 +26,7 @@ void drawPixel(int x, int y, int r, int g, int b, GraphicsContext *gc) {
 }
 
 void drawRect(int x_start, int y_start, int width, int height, int r, int g,
-		int b, GraphicsContext *gc) {
+		int b, graphics_context *gc) {
 
 	int iPixelAddr;
 	for (int x = (x_start * 3); x < (x_start + width) * 3; x = x + 3) {
@@ -42,7 +42,7 @@ void drawRect(int x_start, int y_start, int width, int height, int r, int g,
 
 }
 
-void drawBuffer(int x, int y, int draw_width, int draw_height, char* bufPtr, GraphicsContext *gc) {
+void drawBuffer(int x, int y, int draw_width, int draw_height, char* bufPtr, graphics_context *gc) {
 
 	for (int xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 

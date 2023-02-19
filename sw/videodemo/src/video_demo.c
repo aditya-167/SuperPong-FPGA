@@ -148,8 +148,6 @@ void DemoInitialize() {
 	}
 	fnEnableInterrupts(&intc, &ivt[0], sizeof(ivt) / sizeof(ivt[0]));
 
-	game_loop();
-
 	return;
 }
 

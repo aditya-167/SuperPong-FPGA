@@ -1,6 +1,14 @@
 #include "draw.h"
 #include "../assets/test_image.h"
 
+void getRGB16(int m, Color16* clrPtr) {
+
+	(clrPtr->r) = 255 * ((m) >> 11) / 31;
+	(clrPtr->g) = 255 * ((m >> 5) & 0x3F) / 63;
+	(clrPtr->b) = 255 * ((m & 0x1F)) / 31;
+
+}
+
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 	switch (pattern) {
@@ -203,6 +211,9 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	int draw_width = 640;
 	int draw_height = 480;
 
+	// Helper structure
+	Color16 RGB;
+
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
 		iPixelAddr = xcoi;
@@ -210,14 +221,11 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 		for (ycoi = 0; ycoi < draw_height; ycoi++) {
 
 			int addr = (xcoi / 3) + draw_width * ycoi;
-			int offset = 255;
 
-			int red = ((((arr[addr] & 0xE0) >> 5) / 7)) * offset;
-			int green = ((((arr[addr] & 0x1C) >> 2)) / 7) * offset;
-			int blue = ((arr[addr] & 0x3) / 3) * offset;
-			frame[iPixelAddr] = green; // green
-			frame[iPixelAddr + 1] = blue; // blue
-			frame[iPixelAddr + 2] = red; // red
+			getRGB16(arr[addr], &RGB);
+			frame[iPixelAddr] = RGB.g; // green
+			frame[iPixelAddr + 1] = RGB.b; // blue
+			frame[iPixelAddr + 2] = RGB.r; // red
 
 			iPixelAddr += stride;
 		}
@@ -227,3 +235,4 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 
 }
+

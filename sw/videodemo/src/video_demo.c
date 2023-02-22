@@ -152,6 +152,7 @@ void DemoInitialize() {
 }
 
 void DemoRun() {
+
 	char userInput = 0;
 	u32 locked;
 	XGpio *GpioPtr = &videoCapt.gpio;
@@ -162,7 +163,7 @@ void DemoRun() {
 	}
 	while (userInput != 'q') {
 		fRefresh = 0;
-		DemoPrintMenu();
+		//DemoPrintMenu();
 
 		/* Wait for data on UART */
 		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh) {
@@ -179,7 +180,7 @@ void DemoRun() {
 
 		switch (userInput) {
 		case '1':
-			game_loop(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
+			GameLoop(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
 					dispCtrl.vMode.height, DEMO_STRIDE);
 			break;
 		case '2':
@@ -199,6 +200,8 @@ void DemoRun() {
 					dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_2);
 			break;
 		case '6':
+			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
+					dispCtrl.vMode.height, DEMO_STRIDE, 4);
 			break;
 		case 'q':
 			break;
@@ -207,7 +210,6 @@ void DemoRun() {
 			xil_printf("%d", locked);
 			break;
 		default:
-			xil_printf("\n\rInvalid Selection");
 			usleep(50000);
 		}
 	}
@@ -266,7 +268,7 @@ void DemoCRMenu() {
 	xil_printf("Select a new resolution:");
 }
 
-void game_loop(u8 *frame, u32 width, u32 height, u32 stride) {
+void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 
 	graphics_context gc;
 	gc.frame = frame;

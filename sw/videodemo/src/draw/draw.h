@@ -12,6 +12,7 @@
 #include "xil_cache.h"
 #include "xparameters.h"
 #include "sleep.h"
+#include "../jpg/nanojpg.h"
 
 /* ------------------------------------------------------------ */
 /*					Custom Includes    							*/
@@ -49,6 +50,9 @@ void DemoPrintTest2(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 
 // Draw Test 3
 void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
+
+// Draw Test 4
+void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 
 // Get RGB16 values
 void getRGB16(int number, Color16* clrPtr);

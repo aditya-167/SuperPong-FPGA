@@ -33,6 +33,11 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 		DemoPrintTest3(frame, width, height, stride, pattern);
 		break;
 
+	case 4:
+
+		DemoPrintTest4(frame, width, height, stride, pattern);
+		break;
+
 	default:
 		xil_printf("Error: invalid pattern passed to DemoPrintTest");
 
@@ -236,3 +241,31 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 }
 
+void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
+
+	njInit();
+
+	extern const char _binary_test_jpg_start[];
+	extern const char _binary_test_jpg_end[];
+	int size_bm = _binary_test_jpg_end - _binary_test_jpg_start;
+
+	xil_printf("The linked file is %d bytes and the first character is %x.\n",
+			size_bm, _binary_test_jpg_start[0]);
+
+	for (int i = 0 ; i < 10; i++)
+		xil_printf("%x\n", _binary_test_jpg_start[i]);
+
+	int answer = njDecode(_binary_test_jpg_start, size_bm + 1);
+	if (answer) {
+		xil_printf("Error decoding the input file. %d\n", answer);
+		return;
+	}
+
+	unsigned char* imgPtr = njGetImage();
+	xil_printf("P%d\n%d %d\n255\n", njIsColor() ? 6 : 5, njGetWidth(),
+			njGetHeight());
+	xil_printf("%d %d %d", imgPtr[0], imgPtr[1], imgPtr[2]);
+
+	njDone();
+
+}

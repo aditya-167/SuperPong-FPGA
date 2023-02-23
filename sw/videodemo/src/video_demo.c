@@ -172,7 +172,7 @@ void DemoRun() {
 		/* Store the first character in the UART receive FIFO and echo it */
 		if (!XUartLite_IsReceiveEmpty(UART_BASEADDR)) {
 			userInput = XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
-			xil_printf("%c", userInput);
+			xil_printf("You pressed: %c\n", userInput);
 		} else  //Refresh triggered by video detect interrupt
 		{
 			userInput = 'r';
@@ -277,9 +277,22 @@ void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 	game_context g;
 	initialize(&g);
 
-	render_ball(&g, &gc);
-	render_pads(&g, &gc);
-	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
+	XTmrCtr TimerCounter;
+	setup_stopwatch(&TimerCounter);
+
+	int a =0, b= 0;
+
+	for (int i = 0; i < 10000; i++) {
+
+		a = start_stopwatch(&TimerCounter);
+		update(1, &g, &gc);
+		Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
+		b = end_stopwatch(&TimerCounter);
+
+		float time_to_wait = (float) ((b-a) * 0.00001f) * 1000;
+		usleep(33333 - (int) time_to_wait);
+
+	}
 
 	shutdown(&g);
 

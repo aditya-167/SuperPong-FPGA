@@ -1,5 +1,6 @@
 #include "draw.h"
-#include "../assets/test_image.h"
+
+#include "../assets/jpeg_image.h"
 
 void getRGB16(int m, Color16* clrPtr) {
 
@@ -219,6 +220,8 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	// Helper structure
 	Color16 RGB;
 
+	int arr[1];
+
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
 		iPixelAddr = xcoi;
@@ -245,26 +248,30 @@ void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 	njInit();
 
-	extern const char _binary_test_jpg_start[];
-	extern const char _binary_test_jpg_end[];
-	int size_bm = _binary_test_jpg_end - _binary_test_jpg_start;
-
-	xil_printf("The linked file is %d bytes and the first character is %x.\n",
-			size_bm, _binary_test_jpg_start[0]);
-
-	for (int i = 0 ; i < 10; i++)
-		xil_printf("%x\n", _binary_test_jpg_start[i]);
-
-	int answer = njDecode(_binary_test_jpg_start, size_bm + 1);
+	int answer = njDecode(_acsmallbhol, 169839UL + 1);
 	if (answer) {
 		xil_printf("Error decoding the input file. %d\n", answer);
 		return;
 	}
 
 	unsigned char* imgPtr = njGetImage();
-	xil_printf("P%d\n%d %d\n255\n", njIsColor() ? 6 : 5, njGetWidth(),
-			njGetHeight());
-	xil_printf("%d %d %d", imgPtr[0], imgPtr[1], imgPtr[2]);
+	xil_printf("P%d %d %d %d\n", njIsColor() ? 6 : 5, njGetWidth(),
+			njGetHeight(), sizeof(imgPtr));
+
+	for (int x = 0; x < njGetWidth(); x++) {
+
+		for (int y = 0; y < njGetHeight(); y++) {
+
+			int addr = x * 3 + njGetWidth() * 3 * y;
+			int iPixelAddr = x * 3 + (stride * y);
+			frame[iPixelAddr] = imgPtr[addr + 1];
+			frame[iPixelAddr + 1] = imgPtr[addr + 2];
+			frame[iPixelAddr + 2] = imgPtr[addr + 0];
+
+		}
+
+	}
+	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 
 	njDone();
 

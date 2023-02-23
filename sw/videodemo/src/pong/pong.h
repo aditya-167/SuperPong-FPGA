@@ -8,37 +8,47 @@
 #include <time.h>
 #include "../utility/engine.h"
 #include "sys/time.h"
-#ifndef WIN32
-	#include "../graphics/graphics.h"
-#endif
+#include "../graphics/graphics.h"
+#include "xparameters.h"
+#include "xtmrctr.h"
+#include "xil_printf.h"
+
+#define TMRCTR_DEVICE_ID	XPAR_TMRCTR_0_DEVICE_ID
+#define TIMER_COUNTER_0	 0
 
 #define SCREEN_HEIGHT 480
 #define SCREEN_WIDTH 640
-#define BALLVEL 130
+#define BALLVEL 7
 #define BALLSIZE 10
-#define PLAYERPAD_WIDTH 22
-#define PLAYERPAD_HEIGHT 75
-#define PLAYERPAD_MARGIN 10
-#define PLAYERPAD_VELOCITY 180.0f
+#define PLAYERPAD_WIDTH 10
+#define PLAYERPAD_HEIGHT 100
+#define PLAYERPAD_MARGIN 1
+#define PLAYERPAD_VELOCITY 8
 
-typedef enum GAME_STATE{
+typedef enum GAME_STATE {
 	RUNNING, PAUSED, STOPPED
 } GAME_STATE;
 
 // Ball structure
-typedef struct ball_struct{
-    float x;
-    float y;
-    float xVel;
-    float yVel;
-    int size;
+typedef struct ball_struct {
+	int x;
+	int y;
+	int pX;
+	int pY;
+	int xVel;
+	int yVel;
+	int size;
 } ball_struct;
 
 // PlayerPad structure
-typedef struct player_pad{
-    float xPos;
-	float yPos;
-    int score;
+typedef struct player_pad {
+	int xPos;
+	int yPos;
+	int pX;
+	int pY;
+	int w;
+	int h;
+	int score;
 } player_pad;
 
 // Game context structure
@@ -50,22 +60,29 @@ typedef struct game_context {
 	enum GAME_STATE state;
 } game_context;
 
-
 // Game functions
 bool initialize(game_context* game);
-void update(float t_elapse, game_context* game, graphics_context* gc);
+void update(int t_elapse, game_context* game, graphics_context* gc);
 void shutdown(game_context* game);
 void scoreUpdate(int, int);
+int setup_stopwatch(XTmrCtr* TimerCounter);
+int start_stopwatch(XTmrCtr* TmrCtrInstancePtr);
+int end_stopwatch(XTmrCtr* TmrCtrInstancePtr);
 
 // Ball functions
 void render_ball(game_context* game, graphics_context* gc);
-void update_ball(game_context *game, GAME_STATE state, float t_elapse);
+void update_ball(game_context *game, GAME_STATE state, int t_elapse);
+void check_interesections(game_context* g, graphics_context* gc);
 ball_struct* init_ball(int size);
 
 // Pad function
-void update_CPU_pad(player_pad* pad2, ball_struct* ball, float t_elapse);
-void update_player_pad(player_pad* pad1, player_pad* pad2, ball_struct* ball, float t_elapse);
+void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse);
+void update_player_pad(player_pad* pad1, player_pad* pad2, ball_struct* ball,
+		int t_elapse);
 void render_pads(game_context* game, graphics_context* gc);
 player_pad* init_player_pad(void);
+
+// Debugging
+void print_state(game_context *g);
 
 #endif

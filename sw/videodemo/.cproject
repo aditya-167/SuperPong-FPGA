@@ -71,9 +71,7 @@
 									<listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,--end-group"/>
 								</option>
 								<option id="xilinx.gnu.c.linker.option.lscript.2016379492" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
-								<option id="xilinx.gnu.c.link.option.userobjs.1439267714" name="Other Objects" superClass="xilinx.gnu.c.link.option.userobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/assets/test.o}&quot;"/>
-								</option>
+								<option id="xilinx.gnu.c.link.option.userobjs.1551370745" name="Other Objects" superClass="xilinx.gnu.c.link.option.userobjs" valueType="userObjs"/>
 								<inputType id="xilinx.gnu.linker.input.108847757" superClass="xilinx.gnu.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

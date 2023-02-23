@@ -33,12 +33,15 @@ Hardware stored in the hw directory (TBD).
 2. Open the Xilinx SDK.
 3. Create a new workspace at a suitable location on your PC.
 4. Click on File > Import > Existing Projects into Workspace.
+![Fig. 1](/assets/generalproj.bmp)
 5. Enter the location of the **sw** directory in the root directory textbox.
+![Fig. 1](/assets/root0dir.bmp)
 6. Click Finish.
 
 ## Running the project on the board.
 1. Click on Xilinx Tools > Program FPGA.
 2. Choose **hdmi_wrapper_hw_platform_0** for the hardware platform.
+![Fig. 1](/assets/prog.bmp)
 3. Click Program.
 4. Run the program by creating a debug configuraation by clicking on the green play button.
 5. Connect to the Nexys Video board using a terminal.

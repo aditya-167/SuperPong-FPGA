@@ -12,6 +12,7 @@
 #include "xil_cache.h"
 #include "xparameters.h"
 #include "sleep.h"
+#include "../jpg/nanojpg.h"
 
 /* ------------------------------------------------------------ */
 /*					Custom Includes    							*/
@@ -28,6 +29,13 @@
 #define DEMO_PATTERN_2 2
 #define DEMO_PATTERN_3 3
 
+// Colour Structure
+typedef struct Color16 {
+	int r;
+	int g;
+	int b;
+} Color16;
+
 // Drawing functionality
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 
@@ -43,4 +51,9 @@ void DemoPrintTest2(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 // Draw Test 3
 void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 
+// Draw Test 4
+void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
+
+// Get RGB16 values
+void getRGB16(int number, Color16* clrPtr);
 #endif

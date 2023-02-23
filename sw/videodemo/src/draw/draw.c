@@ -1,5 +1,14 @@
 #include "draw.h"
-#include "../assets/test_image.h"
+
+#include "../assets/jpeg_image.h"
+
+void getRGB16(int m, Color16* clrPtr) {
+
+	(clrPtr->r) = 255 * ((m) >> 11) / 31;
+	(clrPtr->g) = 255 * ((m >> 5) & 0x3F) / 63;
+	(clrPtr->b) = 255 * ((m & 0x1F)) / 31;
+
+}
 
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
@@ -23,6 +32,11 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	case DEMO_PATTERN_3:
 
 		DemoPrintTest3(frame, width, height, stride, pattern);
+		break;
+
+	case 4:
+
+		DemoPrintTest4(frame, width, height, stride, pattern);
 		break;
 
 	default:
@@ -178,17 +192,17 @@ void DemoPrintTest1(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 void DemoPrintTest2(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
-	GraphicsContext myGC = createGC(stride, frame);
+	graphics_context myGC = createGC(stride, frame);
 
 	int px = 0;
 
-	for (int i = 0; i < 500; i+=10) {
+	for (int i = 0; i < 500; i += 10) {
 
 		drawRect(px, px, 10, 10, 0, 0, 0, &myGC);
 		drawRect(i, i, 10, 10, 255, 255, 255, &myGC);
 		Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 		px = i;
-		usleep(33333*4);
+		usleep(33333 * 4);
 
 	}
 
@@ -200,8 +214,13 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 	int xcoi, ycoi;
 	int iPixelAddr;
-	int draw_width = 256;
-	int draw_height = 256;
+	int draw_width = 640;
+	int draw_height = 480;
+
+	// Helper structure
+	Color16 RGB;
+
+	int arr[1];
 
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
@@ -210,15 +229,11 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 		for (ycoi = 0; ycoi < draw_height; ycoi++) {
 
 			int addr = (xcoi / 3) + draw_width * ycoi;
-			int offset = 255;
 
-			int red = ((((arr[addr] & 0xE0) >> 5) / 7)) * offset;
-			int green = ((((arr[addr] & 0x1C) >> 2)) / 7) * offset;
-			int blue = ((arr[addr] & 0x3) / 3) * offset;
-
-			frame[iPixelAddr] = green; // green
-			frame[iPixelAddr + 1] = blue; // blue
-			frame[iPixelAddr + 2] = red; // red
+			getRGB16(arr[addr], &RGB);
+			frame[iPixelAddr] = RGB.g; // green
+			frame[iPixelAddr + 1] = RGB.b; // blue
+			frame[iPixelAddr + 2] = RGB.r; // red
 
 			iPixelAddr += stride;
 		}
@@ -226,5 +241,38 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	}
 
 	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
+
+}
+
+void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
+
+	njInit();
+
+	int answer = njDecode(_acsmallbhol, 169839UL + 1);
+	if (answer) {
+		xil_printf("Error decoding the input file. %d\n", answer);
+		return;
+	}
+
+	unsigned char* imgPtr = njGetImage();
+	xil_printf("P%d %d %d %d\n", njIsColor() ? 6 : 5, njGetWidth(),
+			njGetHeight(), sizeof(imgPtr));
+
+	for (int x = 0; x < njGetWidth(); x++) {
+
+		for (int y = 0; y < njGetHeight(); y++) {
+
+			int addr = x * 3 + njGetWidth() * 3 * y;
+			int iPixelAddr = x * 3 + (stride * y);
+			frame[iPixelAddr] = imgPtr[addr + 1];
+			frame[iPixelAddr + 1] = imgPtr[addr + 2];
+			frame[iPixelAddr + 2] = imgPtr[addr + 0];
+
+		}
+
+	}
+	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
+
+	njDone();
 
 }

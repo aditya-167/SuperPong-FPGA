@@ -1,5 +1,8 @@
 *metadata*
+.vscode
 SDK.log
 sw/RemoteSystemsTempFiles/*
 *RemoteSystemsTempFiles*
 *.o
+*.exe
+sw/videodemo/src/pong/main.c

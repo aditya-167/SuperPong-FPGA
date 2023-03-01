@@ -203,6 +203,9 @@ void DemoRun() {
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
 					dispCtrl.vMode.height, DEMO_STRIDE, 4);
 			break;
+		case 't':
+			xil_printf("%d\n", *KEYPAD_PTR);
+			break;
 		case 'q':
 			break;
 		case 'r':
@@ -275,7 +278,7 @@ void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 	gc.stride = stride;
 
 	game_context g;
-	initialize(&g, NULL);
+	initialize(&g, KEYPAD_PTR);
 
 	XTmrCtr TimerCounter;
 	setup_stopwatch(&TimerCounter);

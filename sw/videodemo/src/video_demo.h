@@ -55,6 +55,8 @@ void DemoISR(void *callBackRef, void *pVideo);
 void GameLoop();
 /* ------------------------------------------------------------ */
 
+volatile unsigned int* KEYPAD_PTR = (unsigned int *) XPAR_AXI_GPIO_0_BASEADDR;
+
 /************************************************************************/
 
 #endif /* VIDEO_DEMO_H_ */

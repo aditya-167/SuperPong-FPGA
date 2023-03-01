@@ -86,22 +86,20 @@ void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse) {
 
 // Update the player pad position
 void update_player_pad(player_pad* pad1, player_pad* pad2, ball_struct* ball,
-		int t_elapse) {
+		int t_elapse, int keys) {
 
 	pad1->pX = pad1->xPos;
 	pad1->pY = pad1->yPos;
 
-	if (ball->x < SCREEN_WIDTH / 2) {
-		if (pad1->yPos <= ball->y)
-			pad1->yPos += PLAYERPAD_VELOCITY * t_elapse;
-
-		if (pad1->yPos >= ball->y)
-			pad1->yPos -= PLAYERPAD_VELOCITY * t_elapse;
-
+	if (keys == 16) {
+		pad1->yPos += PLAYERPAD_VELOCITY * t_elapse;
+	}
+	else if (keys == 2){
+		pad1->yPos -= PLAYERPAD_VELOCITY * t_elapse;
 	}
 
-	if (pad1->yPos < pad1->h / 2)
-		pad1->yPos = pad1->h / 2;
+	if (pad1->yPos < 0)
+		pad1->yPos = 0;
 
 	if (pad1->yPos > SCREEN_HEIGHT - pad1->h / 2)
 		pad1->yPos = SCREEN_HEIGHT - pad1->h / 2;
@@ -193,7 +191,7 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 	update_ball(game, game->state, t_elapse);
 	render_ball(game, gc);
 
-	update_player_pad(game->pad1, game->pad2, game->ball, t_elapse);
+	update_player_pad(game->pad1, game->pad2, game->ball, t_elapse, *game->keys);
 	update_CPU_pad(game->pad2, game->ball, t_elapse);
 	check_interesections(game, gc);
 	render_pads(game, gc);

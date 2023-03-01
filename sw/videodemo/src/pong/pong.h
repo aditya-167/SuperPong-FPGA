@@ -9,7 +9,6 @@
 #include "../utility/engine.h"
 #include "sys/time.h"
 #include "../graphics/graphics.h"
-#include "../utility/input.h"
 #include "xparameters.h"
 #include "xtmrctr.h"
 #include "xil_printf.h"
@@ -81,7 +80,7 @@ ball_struct* init_ball(int size);
 // Pad function
 void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse);
 void update_player_pad(player_pad* pad1, player_pad* pad2, ball_struct* ball,
-		int t_elapse);
+		int t_elapse, int keys);
 void render_pads(game_context* game, graphics_context* gc);
 player_pad* init_player_pad(void);
 

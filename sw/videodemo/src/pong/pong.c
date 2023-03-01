@@ -1,7 +1,7 @@
 #include "pong.h"
 
 // Initialise the game
-bool initialize(game_context* game) {
+bool initialize(game_context* game, unsigned int* input_address) {
 
 	ball_struct* ball = init_ball(BALLSIZE);
 	player_pad* pad1 = init_player_pad();
@@ -14,6 +14,9 @@ bool initialize(game_context* game) {
 	game->pad1 = pad1;
 	game->pad2 = pad2;
 	game->state = RUNNING;
+
+	// Assign input addrress
+	game->keys =  input_address;
 
 	return true;
 

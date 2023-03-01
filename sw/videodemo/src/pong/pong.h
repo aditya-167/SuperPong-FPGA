@@ -9,6 +9,7 @@
 #include "../utility/engine.h"
 #include "sys/time.h"
 #include "../graphics/graphics.h"
+#include "../utility/input.h"
 #include "xparameters.h"
 #include "xtmrctr.h"
 #include "xil_printf.h"
@@ -57,11 +58,13 @@ typedef struct game_context {
 	player_pad* pad1;
 	player_pad* pad2;
 	ball_struct* ball;
+	volatile unsigned int* keys;
 	enum GAME_STATE state;
+
 } game_context;
 
 // Game functions
-bool initialize(game_context* game);
+bool initialize(game_context* game, unsigned int* input_address);
 void update(int t_elapse, game_context* game, graphics_context* gc);
 void shutdown(game_context* game);
 void scoreUpdate(int, int);

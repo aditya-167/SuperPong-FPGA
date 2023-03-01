@@ -275,7 +275,7 @@ void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 	gc.stride = stride;
 
 	game_context g;
-	initialize(&g);
+	initialize(&g, NULL);
 
 	XTmrCtr TimerCounter;
 	setup_stopwatch(&TimerCounter);

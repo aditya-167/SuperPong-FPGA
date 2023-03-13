@@ -12,6 +12,7 @@
 #include "xparameters.h"
 #include "xtmrctr.h"
 #include "xil_printf.h"
+#include "PmodJSTK2.h"
 
 #define TMRCTR_DEVICE_ID	XPAR_TMRCTR_0_DEVICE_ID
 #define TIMER_COUNTER_0	 0
@@ -24,9 +25,10 @@
 #define PLAYERPAD_HEIGHT 100
 #define PLAYERPAD_MARGIN 1
 #define PLAYERPAD_VELOCITY 8
+#define JOY_STEP 10
 
 typedef enum GAME_STATE {
-	RUNNING, PAUSED, STOPPED
+	RUNNING, PAUSED, STOPPED, RESET
 } GAME_STATE;
 
 // Ball structure
@@ -49,6 +51,9 @@ typedef struct player_pad {
 	int w;
 	int h;
 	int score;
+	int r;
+	int g;
+	int b;
 } player_pad;
 
 // Game context structure
@@ -57,14 +62,19 @@ typedef struct game_context {
 	player_pad* pad1;
 	player_pad* pad2;
 	ball_struct* ball;
+	PmodJSTK2* player_1_joystick;
+	PmodJSTK2* player_2_joystick;
+	enum GAME_STATE previous_state;
 	enum GAME_STATE state;
+
 } game_context;
 
 // Game functions
-bool initialize(game_context* game);
+bool initialize(game_context* game, PmodJSTK2* player_1_joystick, PmodJSTK2* player_2_joystick);
 void update(int t_elapse, game_context* game, graphics_context* gc);
 void shutdown(game_context* game);
 void scoreUpdate(int, int);
+void clearScreen(graphics_context* gc);
 int setup_stopwatch(XTmrCtr* TimerCounter);
 int start_stopwatch(XTmrCtr* TmrCtrInstancePtr);
 int end_stopwatch(XTmrCtr* TmrCtrInstancePtr);
@@ -77,7 +87,7 @@ ball_struct* init_ball(int size);
 
 // Pad function
 void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse);
-void update_player_pad(player_pad* pad1, player_pad* pad2, ball_struct* ball,
+void update_player_pad(PmodJSTK2* player, player_pad* pad1, ball_struct* ball,
 		int t_elapse);
 void render_pads(game_context* game, graphics_context* gc);
 player_pad* init_player_pad(void);

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sun Feb 19 16:03:05 2023
+# Process ID: 5240
+# Current directory: D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Nexys-Video-HDMI/proj/HDMI.runs/impl_1
+# Command line: vivado.exe -log hdmi_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hdmi_wrapper.tcl -notrace
+# Log file: D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Nexys-Video-HDMI/proj/HDMI.runs/impl_1/hdmi_wrapper.vdi
+# Journal file: D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Nexys-Video-HDMI/proj/HDMI.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source hdmi_wrapper.tcl -notrace

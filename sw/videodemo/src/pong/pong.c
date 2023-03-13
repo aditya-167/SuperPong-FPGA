@@ -1,7 +1,8 @@
 #include "pong.h"
 
 // Initialise the game
-bool initialize(game_context* game) {
+bool initialize(game_context* game, PmodJSTK2* player_1_joystick,
+		PmodJSTK2* player_2_joystick) {
 
 	ball_struct* ball = init_ball(BALLSIZE);
 	player_pad* pad1 = init_player_pad();
@@ -13,6 +14,8 @@ bool initialize(game_context* game) {
 	game->ball = ball;
 	game->pad1 = pad1;
 	game->pad2 = pad2;
+	game->player_1_joystick = player_1_joystick;
+	game->player_2_joystick = player_2_joystick;
 	game->state = RUNNING;
 
 	return true;
@@ -59,49 +62,62 @@ void score_update(player_pad* pad1, int score) {
 }
 
 // Update the CPU player's position
-void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse) {
+void update_CPU_pad(player_pad* pad, ball_struct* ball, int t_elapse) {
 
-	pad2->pY = pad2->yPos;
-	pad2->pX = pad2->xPos;
+	pad->pY = pad->yPos;
+	pad->pX = pad->xPos;
 
-	if (ball->x > SCREEN_WIDTH / 2) {
-		if (pad2->yPos <= ball->y)
-			pad2->yPos += PLAYERPAD_VELOCITY * t_elapse;
+	if (pad->xPos < SCREEN_WIDTH / 2) {
+		if (ball->x < SCREEN_WIDTH / 2) {
+			if (pad->yPos <= ball->y)
+				pad->yPos += PLAYERPAD_VELOCITY * t_elapse;
 
-		if (pad2->yPos >= ball->y)
-			pad2->yPos -= PLAYERPAD_VELOCITY * t_elapse;
+			if (pad->yPos >= ball->y)
+				pad->yPos -= PLAYERPAD_VELOCITY * t_elapse;
+
+		}
+	} else {
+		if (ball->x > SCREEN_WIDTH / 2) {
+			if (pad->yPos <= ball->y)
+				pad->yPos += PLAYERPAD_VELOCITY * t_elapse;
+
+			if (pad->yPos >= ball->y)
+				pad->yPos -= PLAYERPAD_VELOCITY * t_elapse;
+
+		}
 
 	}
 
-	if (pad2->yPos < pad2->h / 2)
-		pad2->yPos = pad2->h / 2;
+	if (pad->yPos < 0)
+		pad->yPos = 0;
 
-	if (pad2->yPos > SCREEN_HEIGHT - pad2->h / 2)
-		pad2->yPos = SCREEN_HEIGHT - pad2->h / 2;
+	if (pad->yPos > SCREEN_HEIGHT - pad->h)
+		pad->yPos = SCREEN_HEIGHT - pad->h;
 
 }
 
 // Update the player pad position
-void update_player_pad(player_pad* pad1, player_pad* pad2, ball_struct* ball,
+void update_player_pad(PmodJSTK2* player, player_pad* pad, ball_struct* ball,
 		int t_elapse) {
 
-	pad1->pX = pad1->xPos;
-	pad1->pY = pad1->yPos;
+	u16 Ydata;
 
-	if (ball->x < SCREEN_WIDTH / 2) {
-		if (pad1->yPos <= ball->y)
-			pad1->yPos += PLAYERPAD_VELOCITY * t_elapse;
+	float step;
 
-		if (pad1->yPos >= ball->y)
-			pad1->yPos -= PLAYERPAD_VELOCITY * t_elapse;
+	pad->pX = pad->xPos;
+	pad->pY = pad->yPos;
 
-	}
+	Ydata = JSTK2_getY(player);
 
-	if (pad1->yPos < pad1->h / 2)
-		pad1->yPos = pad1->h / 2;
+	step = JOY_STEP * (((float) (Ydata - 128)) / 128);
 
-	if (pad1->yPos > SCREEN_HEIGHT - pad1->h / 2)
-		pad1->yPos = SCREEN_HEIGHT - pad1->h / 2;
+	pad->yPos -= step;
+
+	if (pad->yPos < 0)
+		pad->yPos = 0;
+
+	if (pad->yPos > SCREEN_HEIGHT - pad->h)
+		pad->yPos = SCREEN_HEIGHT - pad->h;
 
 }
 
@@ -127,8 +143,6 @@ void check_interesections(game_context* g, graphics_context* gc) {
 		g->ball->xVel = -(g->ball->xVel);
 	}
 
-//	drawRect(pad1Rect.x, pad1Rect.y, pad1Rect.w, pad1Rect.h, 128, 128, 128, gc);
-
 }
 
 // Update the ball structure
@@ -152,12 +166,26 @@ void update_ball(game_context *game, GAME_STATE state, int t_elapse) {
 
 	// Check x-crossings
 	if (ball->x < BALLSIZE) {
+
+		//game->state = RESET;
 		ball->xVel = -(ball->xVel);
-		score_update(game->pad1, 1);
+		score_update(game->pad2, 1);
+		game->ball->x = SCREEN_WIDTH/2;
+		game->ball->y = SCREEN_HEIGHT/2;
+		game->ball->xVel += 1;
+		game->ball->yVel += 1;
+
 	}
 	if (ball->x > SCREEN_WIDTH - BALLSIZE) {
+
+		//game->state = RESET;
 		score_update(game->pad1, 1);
 		ball->xVel = -(ball->xVel);
+		game->ball->x = SCREEN_WIDTH/2;
+		game->ball->y = SCREEN_HEIGHT/2;
+		game->ball->xVel += 1;
+		game->ball->yVel += 1;
+
 	}
 
 	// Check y-crossings
@@ -181,19 +209,79 @@ void shutdown(game_context* game) {
 	game->pad2 = NULL;
 	game->state = STOPPED;
 
+	xil_printf("Game shut down.\n");
+
 	return;
 }
 
 // This function is called repeatedly to update the game
 void update(int t_elapse, game_context* game, graphics_context* gc) {
 
-	update_ball(game, game->state, t_elapse);
-	render_ball(game, gc);
+	// Pausing Check
+	if (JSTK2_getBtns(game->player_1_joystick) == 2) {
+		if (game->state == PAUSED) {
+			game->state = RUNNING;
+		} else if (game->state == RUNNING) {
+			game->state = PAUSED;
+		}
+	}
+	else if (JSTK2_getBtns(game->player_1_joystick) == 1){
+		game->state = STOPPED;
+	}
 
-	update_player_pad(game->pad1, game->pad2, game->ball, t_elapse);
-	update_CPU_pad(game->pad2, game->ball, t_elapse);
-	check_interesections(game, gc);
-	render_pads(game, gc);
+	if (game->state == PAUSED) {
+		return;
+	}
+
+	else {
+
+		update_ball(game, game->state, t_elapse);
+		render_ball(game, gc);
+
+		// If JST == null, player is CPU
+		if (game->player_1_joystick == NULL) {
+			update_CPU_pad(game->pad1, game->ball, t_elapse);
+		} else {
+			update_player_pad(game->player_1_joystick, game->pad1, game->ball,
+					t_elapse);
+		}
+
+		if (game->player_2_joystick == NULL) {
+			update_CPU_pad(game->pad2, game->ball, t_elapse);
+		} else {
+			update_player_pad(game->player_2_joystick, game->pad2, game->ball,
+					t_elapse);
+		}
+
+		check_interesections(game, gc);
+		render_pads(game, gc);
+
+	}
+
+}
+
+void clearScreen(graphics_context* gc){
+
+	int xcoi, ycoi;
+	int iPixelAddr;
+	int draw_width = 640/1;
+	int draw_height = 480/1;
+
+	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
+
+		iPixelAddr = xcoi;
+
+		for (ycoi = 0; ycoi < draw_height; ycoi++) {
+
+			gc->frame[iPixelAddr] = 0;
+			gc->frame[iPixelAddr + 1] = 0;
+			gc->frame[iPixelAddr + 2] = 0;
+
+			iPixelAddr += gc->stride;
+		}
+
+	}
+	Xil_DCacheFlushRange((unsigned int ) gc->frame, DEMO_MAX_FRAME);
 
 }
 
@@ -202,7 +290,7 @@ void render_pads(game_context* game, graphics_context* gc) {
 	drawRect(game->pad1->pX, game->pad1->pY, game->pad1->w, game->pad1->h, 0, 0,
 			0, gc);
 	drawRect(game->pad1->xPos, game->pad1->yPos, game->pad1->w, game->pad1->h,
-			0, 255, 0, gc);
+			game->pad1->r, game->pad1->g, game->pad1->b, gc);
 
 	drawRect(game->pad2->pX, game->pad2->pY, game->pad2->w, game->pad2->h, 0, 0,
 			0, gc);

@@ -3,8 +3,6 @@
 	<name>hdmi_wrapper_hw_platform_0</name>
 	<comment>Created by SDK v2016.4</comment>
 	<projects>
-		<project>videodemo</project>
-		<project>videodemo_bsp</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>
@@ -13,7 +11,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1676943698131</id>
+			<id>1678057891019</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -22,7 +20,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1676943698131</id>
+			<id>1678057891024</id>
 			<name></name>
 			<type>6</type>
 			<matcher>
@@ -31,7 +29,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1676943698131</id>
+			<id>1678057891036</id>
 			<name></name>
 			<type>6</type>
 			<matcher>

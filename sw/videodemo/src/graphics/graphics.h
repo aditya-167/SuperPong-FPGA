@@ -12,6 +12,7 @@
 #include "xil_cache.h"
 #include "xparameters.h"
 #include "sleep.h"
+#include "../draw/draw.h"
 
 // Aggregation of some graphics data
 typedef struct graphics_context{
@@ -32,5 +33,8 @@ void drawPixel(int x,int y,int r,int g,int b, graphics_context *gc);
 
 // Draw pixels based on a specific buffer
 void drawBuffer(int x, int y, int width, int height, char* bufPtr, graphics_context *gc);
+
+// Draw full screen image
+void drawFullScreenImage(int* bufPtr, graphics_context *gc);
 
 #endif

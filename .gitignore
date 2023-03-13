@@ -6,3 +6,4 @@ sw/RemoteSystemsTempFiles/*
 *.o
 *.exe
 sw/videodemo/src/pong/main.c
+hw/HDMI.cache

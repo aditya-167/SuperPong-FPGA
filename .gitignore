@@ -7,3 +7,5 @@ sw/RemoteSystemsTempFiles/*
 *.exe
 sw/videodemo/src/pong/main.c
 hw/HDMI.cache/*
+hw/vivado.jou
+hw/vivado.log

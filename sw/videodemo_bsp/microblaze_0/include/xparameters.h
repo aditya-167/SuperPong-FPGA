@@ -458,6 +458,23 @@
 
 /******************************************************************/
 
+/* Definitions for driver PMODJSTK2 */
+#define XPAR_PMODJSTK2_NUM_INSTANCES 2
+
+/* Definitions for peripheral PMODJSTK2_0 */
+#define XPAR_PMODJSTK2_0_DEVICE_ID 0
+#define XPAR_PMODJSTK2_0_AXI_LITE_SPI_BASEADDR 0x00010000
+#define XPAR_PMODJSTK2_0_AXI_LITE_SPI_HIGHADDR 0x0001FFFF
+
+
+/* Definitions for peripheral PMODJSTK2_1 */
+#define XPAR_PMODJSTK2_1_DEVICE_ID 1
+#define XPAR_PMODJSTK2_1_AXI_LITE_SPI_BASEADDR 0x00020000
+#define XPAR_PMODJSTK2_1_AXI_LITE_SPI_HIGHADDR 0x0002FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver AXIVDMA */
 #define XPAR_XAXIVDMA_NUM_INSTANCES 1
 
@@ -622,15 +639,6 @@
 #define XPAR_AXI_DYNCLK_0_BASEADDR 0x44A20000
 #define XPAR_AXI_DYNCLK_0_HIGHADDR 0x44A2FFFF
 
-
-/******************************************************************/
-
-/* Definitions for peripheral AXI_GPIO_0 */
-#define XPAR_AXI_GPIO_0_BASEADDR 0x40010000
-#define XPAR_AXI_GPIO_0_HIGHADDR 0x4001FFFF
-#define XPAR_AXI_GPIO_0_DEVICE_ID 0
-#define XPAR_AXI_GPIO_0_INTERRUPT_PRESENT 0
-#define XPAR_AXI_GPIO_0_IS_DUAL 0
 
 /******************************************************************/
 

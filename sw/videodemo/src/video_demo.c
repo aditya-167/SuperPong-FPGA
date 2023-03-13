@@ -32,7 +32,6 @@
 #include "intc/intc.h"
 #include <stdio.h>
 #include "xuartlite_l.h"
-//#include "xuartps.h"
 #include "math.h"
 #include <ctype.h>
 #include <stdlib.h>
@@ -40,6 +39,15 @@
 #include "xil_cache.h"
 #include "xparameters.h"
 #include "sleep.h"
+#include "./assets/paused_image.h"
+#include "graphics/graphics.h"
+/*
+ * Joy Stick Includes
+ */
+#include <stdio.h>
+#include "xil_printf.h"
+#include "PmodJSTK2.h"
+
 /*
  * XPAR redefines
  */
@@ -79,11 +87,14 @@ const ivt_t ivt[] = {
 videoGpioIvt(VID_GPIO_IRPT_ID, &videoCapt),
 videoVtcIvt(VID_VTC_IRPT_ID, &(videoCapt.vtc)) };
 
+int test = 0;
+
 /* ------------------------------------------------------------ */
 /*				Procedure Definitions							*/
 /* ------------------------------------------------------------ */
 
 int main(void) {
+
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
 
@@ -91,6 +102,8 @@ int main(void) {
 
 	DemoRun();
 
+	Xil_DCacheDisable();
+	Xil_ICacheDisable();
 	return 0;
 }
 
@@ -153,17 +166,23 @@ void DemoInitialize() {
 
 void DemoRun() {
 
+	// Greeting message
+	PrintMenu();
+
 	char userInput = 0;
 	u32 locked;
 	XGpio *GpioPtr = &videoCapt.gpio;
+
+	DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
+			dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_3);
 
 	/* Flush UART FIFO */
 	while (!XUartLite_IsReceiveEmpty(UART_BASEADDR)) {
 		XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
 	}
+
 	while (userInput != 'q') {
 		fRefresh = 0;
-		//DemoPrintMenu();
 
 		/* Wait for data on UART */
 		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh) {
@@ -203,8 +222,8 @@ void DemoRun() {
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
 					dispCtrl.vMode.height, DEMO_STRIDE, 4);
 			break;
-		case 't':
-			xil_printf("%d\n", *KEYPAD_PTR);
+		case '7':
+			JoyStickDemo();
 			break;
 		case 'q':
 			break;
@@ -220,84 +239,169 @@ void DemoRun() {
 	return;
 }
 
-void DemoPrintMenu() {
-	xil_printf("\x1B[H"); //Set cursor to top left of terminal
-	xil_printf("\x1B[2J"); //Clear terminal
-	xil_printf("**************************************************\n\r");
-	xil_printf("*             Nexys Video HDMI Demo              *\n\r");
-	xil_printf("**************************************************\n\r");
-	xil_printf("*Display Resolution: %28s*\n\r", dispCtrl.vMode.label);
-	printf("*Display Pixel Clock Freq. (MHz): %15.3f*\n\r", dispCtrl.pxlFreq);
-	xil_printf("*Display Frame Index: %27d*\n\r", dispCtrl.curFrame);
-	if (videoCapt.state == VIDEO_DISCONNECTED)
-		xil_printf("*Video Capture Resolution: %22s*\n\r", "!HDMI UNPLUGGED!");
-	else
-		xil_printf("*Video Capture Resolution: %17dx%-4d*\n\r",
-				videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo);
-	xil_printf("*Video Frame Index: %29d*\n\r", videoCapt.curFrame);
-	xil_printf("**************************************************\n\r");
-	xil_printf("\n\r");
-	xil_printf("1 - Change Display Resolution\n\r");
-	xil_printf("2 - Change Display Framebuffer Index\n\r");
-	xil_printf("3 - Print Blended Test Pattern to Display Framebuffer\n\r");
-	xil_printf("4 - Print Color Bar Test Pattern to Display Framebuffer\n\r");
-	xil_printf("5 - Start/Stop Video stream into Video Framebuffer\n\r");
-	xil_printf("6 - Change Video Framebuffer Index\n\r");
-	xil_printf("7 - Grab Video Frame and invert colors\n\r");
-	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
-	xil_printf("q - Quit\n\r");
-	xil_printf("\n\r");
-	xil_printf("\n\r");
-	xil_printf("Enter a selection:");
-}
-
-void DemoCRMenu() {
-	xil_printf("\x1B[H"); //Set cursor to top left of terminal
-	xil_printf("\x1B[2J"); //Clear terminal
-	xil_printf("**************************************************\n\r");
-	xil_printf("*             Nexys Video HDMI Demo              *\n\r");
-	xil_printf("**************************************************\n\r");
-	xil_printf("*Current Resolution: %28s*\n\r", dispCtrl.vMode.label);
-	printf("*Pixel Clock Freq. (MHz): %23.3f*\n\r", dispCtrl.pxlFreq);
-	xil_printf("**************************************************\n\r");
-	xil_printf("\n\r");
-	xil_printf("1 - %s\n\r", VMODE_640x480.label);
-	xil_printf("2 - %s\n\r", VMODE_800x600.label);
-	xil_printf("3 - %s\n\r", VMODE_1280x720.label);
-	xil_printf("4 - %s\n\r", VMODE_1280x1024.label);
-	xil_printf("5 - %s\n\r", VMODE_1920x1080.label);
-	xil_printf("q - Quit (don't change resolution)\n\r");
-	xil_printf("\n\r");
-	xil_printf("Select a new resolution:");
-}
-
 void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 
+	// Setup joysticks
+	PmodJSTK2 joystick;
+	// Initialise joystick
+	JSTK2_begin(&joystick, XPAR_PMODJSTK2_0_AXI_LITE_SPI_BASEADDR);
+	// Set no inversion
+	JSTK2_setInversion(&joystick, 0, 1);
+
+	// Setup and initialisation
 	graphics_context gc;
 	gc.frame = frame;
 	gc.stride = stride;
 
+	clearScreen(&gc);
+
 	game_context g;
-	initialize(&g, KEYPAD_PTR);
+	initialize(&g, &joystick, NULL);
 
 	XTmrCtr TimerCounter;
 	setup_stopwatch(&TimerCounter);
 
-	int a =0, b= 0;
+	int a = 0, b = 0;
+	xil_printf("Starting the game. Game STATE = %d\n", g.state);
 
-	for (int i = 0; i < 10000; i++) {
+	// Choose the player's colours
+	int colours[3] = { 0, 0, 0 };
+	chooseColours(&joystick, &(colours[0]), &gc, &g);
+
+	// Clear screen again
+	clearScreen(&gc);
+
+	// Set colours for the players
+	(g.pad1)->r = colours[0];
+	(g.pad1)->g = colours[1];
+	(g.pad1)->b = colours[2];
+
+	while (g.state != STOPPED) {
 
 		a = start_stopwatch(&TimerCounter);
 		update(1, &g, &gc);
 		Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 		b = end_stopwatch(&TimerCounter);
 
-		float time_to_wait = (float) ((b-a) * 0.00001f) * 1000;
+		float time_to_wait = (float) ((b - a) * 0.00001f) * 1000;
 		usleep(33333 - (int) time_to_wait);
 
 	}
 
+	drawFullScreenImage(paused_image, &gc);
 	shutdown(&g);
+}
+
+void PrintMenu() {
+
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+	xil_printf("**************************************************\n\r");
+	xil_printf("*             PONG SUPERIOR GAME              *\n\r");
+	xil_printf("**************************************************\n\r");
+	xil_printf("1 - Play Game\n\r");
+	xil_printf("2 - Demo 1\n\r");
+	xil_printf("3 - Demo 2\n\r");
+	xil_printf("4 - Demo 3\n\r");
+	xil_printf("5 - Demo 4\n\r");
+	xil_printf("6 - Demo 5\n\r");
+	xil_printf("7 - Test Joysticks\n\r");
+	xil_printf("q - Quit\n\r");
+	xil_printf("\n\r");
+	xil_printf("\n\r");
+	xil_printf("Enter a selection:");
 
 }
 
+int chooseColours(PmodJSTK2* joystick, int* colours, graphics_context* gc, game_context* game) {
+
+	int stop = 0;
+	int r = 10;
+	int g = 10;
+	int b = 10;
+
+	DemoPrintTest(gc->frame, 1, 1, DEMO_STRIDE, 5);
+
+	while (!stop) {
+
+		// Get coord values
+		int Ydata = JSTK2_getY(joystick);
+		int Xdata = JSTK2_getX(joystick);
+
+		xil_printf("\n\rX: %d  Y: %d BTN: %x", Xdata, Ydata,
+				JSTK2_getBtns(joystick));
+		delay(5000);
+
+		float yStep;
+		yStep = JOY_STEP * (((float) (Ydata - 128)) / 128);
+
+		float xStep;
+		xStep = JOY_STEP * (((float) (Xdata - 128)) / 128);
+
+		r += yStep;
+		g += xStep;
+
+		// Draw coloured rectangle
+		drawRect(136, 331, 397, 81, r, g, b, gc);
+		// Flush screen buffer
+		Xil_DCacheFlushRange((unsigned int ) gc->frame, DEMO_MAX_FRAME);
+
+		// Set led from btns and axis
+		if (JSTK2_getBtns(joystick) == 2)
+			stop = 1;
+		else if (JSTK2_getBtns(joystick) == 1)
+			b++;
+		else
+			JSTK2_setLed(joystick, r, g, b);
+
+	}
+
+	*colours = r;
+	*(colours + 1) = g;
+	*(colours + 2) = b;
+
+	return 0;
+
+}
+
+int JoyStickDemo() {
+
+	u16 Ydata;
+	u16 Xdata;
+
+	PmodJSTK2 joysticks;
+	PmodJSTK2* joystick = &joysticks;
+
+	//init joystick
+	JSTK2_begin(joystick, XPAR_PMODJSTK2_0_AXI_LITE_SPI_BASEADDR);
+
+	//set no inversion
+	JSTK2_setInversion(joystick, 0, 1);
+
+	xil_printf("\n\rJoystick Demo\n");
+
+	int stop = 0;
+
+	while (!stop) {
+
+		// Get coord values
+		Ydata = JSTK2_getY(joystick);
+		Xdata = JSTK2_getX(joystick);
+		xil_printf("\n\rX: %d     Y: %d	   BTN: %x", Xdata, Ydata,
+				JSTK2_getBtns(joystick));
+		delay(5000);
+
+		// Set colour on screen
+
+		// Set led from btns and axis
+		if (JSTK2_getBtns(joystick) == 1)
+			JSTK2_setLed(joystick, 0, 255, 0);
+		else if (JSTK2_getBtns(joystick) == 2)
+			stop = 1;
+		else
+			JSTK2_setLed(joystick, Xdata, 0, Ydata);
+
+	}
+
+	return 0;
+}

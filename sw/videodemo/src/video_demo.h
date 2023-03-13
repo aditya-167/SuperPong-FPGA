@@ -44,18 +44,18 @@
 
 void DemoInitialize();
 void DemoRun();
-void DemoPrintMenu();
+void PrintMenu();
 void DemoChangeRes();
-void DemoCRMenu();
 void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
 void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoISR(void *callBackRef, void *pVideo);
 
 /* ------------------------------------------------------------ */
-void GameLoop();
+int JoyStickDemo();
+void choosePlayerColour(PmodJSTK2* joystick ,int* colors);
+void GameLoop(u8 *frame, u32 width, u32 height, u32 stride);
+int chooseColours(PmodJSTK2* joystick, int* colours, graphics_context* gc, game_context* game);
 /* ------------------------------------------------------------ */
-
-volatile unsigned int* KEYPAD_PTR = (unsigned int *) XPAR_AXI_GPIO_0_BASEADDR;
 
 /************************************************************************/
 

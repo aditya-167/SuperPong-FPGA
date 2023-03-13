@@ -42,11 +42,12 @@ void drawRect(int x_start, int y_start, int width, int height, int r, int g,
 
 }
 
-void drawBuffer(int x, int y, int draw_width, int draw_height, char* bufPtr, graphics_context *gc) {
+void drawBuffer(int x, int y, int draw_width, int draw_height, char* bufPtr,
+		graphics_context *gc) {
 
 	for (int xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
-		int iPixelAddr = xcoi + gc->stride*y;
+		int iPixelAddr = xcoi + gc->stride * y;
 
 		for (int ycoi = 0; ycoi < draw_height; ycoi++) {
 
@@ -65,6 +66,38 @@ void drawBuffer(int x, int y, int draw_width, int draw_height, char* bufPtr, gra
 		}
 
 	}
+
+}
+
+void drawFullScreenImage(int* bufPtr, graphics_context *gc) {
+
+	int xcoi, ycoi;
+	int iPixelAddr;
+	int draw_width = 640;
+	int draw_height = 480;
+
+	// Helper structure
+	Color16 RGB;
+
+	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
+
+		iPixelAddr = xcoi;
+
+		for (ycoi = 0; ycoi < draw_height; ycoi++) {
+
+			int addr = (xcoi / 3) + draw_width * ycoi;
+
+			getRGB16(bufPtr[addr], &RGB);
+			gc->frame[iPixelAddr] = RGB.g; // green
+			gc->frame[iPixelAddr + 1] = RGB.b; // blue
+			gc->frame[iPixelAddr + 2] = RGB.r; // red
+
+			iPixelAddr += gc->stride;
+		}
+
+	}
+
+	Xil_DCacheFlushRange((unsigned int ) gc->frame, DEMO_MAX_FRAME);
 
 }
 

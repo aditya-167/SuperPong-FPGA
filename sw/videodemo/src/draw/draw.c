@@ -1,14 +1,6 @@
 #include "draw.h"
-
-#include "../assets/jpeg_image.h"
-
-void getRGB16(int m, Color16* clrPtr) {
-
-	(clrPtr->r) = 255 * ((m) >> 11) / 31;
-	(clrPtr->g) = 255 * ((m >> 5) & 0x3F) / 63;
-	(clrPtr->b) = 255 * ((m & 0x1F)) / 31;
-
-}
+#include "../assets/title_image.h"
+#include "../assets/colour_picker.h"
 
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
@@ -39,10 +31,23 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 		DemoPrintTest4(frame, width, height, stride, pattern);
 		break;
 
+	case 5:
+
+		DemoPrintTest5(frame, width, height, stride, pattern);
+		break;
+
 	default:
 		xil_printf("Error: invalid pattern passed to DemoPrintTest");
 
 	}
+}
+
+void getRGB16(int m, Color16* clrPtr) {
+
+	(clrPtr->r) = 255 * ((m) >> 11) / 31;
+	(clrPtr->g) = 255 * ((m >> 5) & 0x3F) / 63;
+	(clrPtr->b) = 255 * ((m & 0x1F)) / 31;
+
 }
 
 void DemoPrintTest0(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
@@ -220,8 +225,6 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	// Helper structure
 	Color16 RGB;
 
-	int arr[1];
-
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
 		iPixelAddr = xcoi;
@@ -230,7 +233,7 @@ void DemoPrintTest3(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 			int addr = (xcoi / 3) + draw_width * ycoi;
 
-			getRGB16(arr[addr], &RGB);
+			getRGB16(title[addr], &RGB);
 			frame[iPixelAddr] = RGB.g; // green
 			frame[iPixelAddr + 1] = RGB.b; // blue
 			frame[iPixelAddr + 2] = RGB.r; // red
@@ -248,7 +251,8 @@ void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
 	njInit();
 
-	int answer = njDecode(_acsmallbhol, 169839UL + 1);
+	int abc[] = {1};
+	int answer = njDecode(abc, 169839UL + 1);
 	if (answer) {
 		xil_printf("Error decoding the input file. %d\n", answer);
 		return;
@@ -274,5 +278,37 @@ void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 
 	njDone();
+
+}
+
+void DemoPrintTest5(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
+
+	int xcoi, ycoi;
+	int iPixelAddr;
+	int draw_width = 640;
+	int draw_height = 480;
+
+	// Helper structure
+	Color16 RGB;
+
+	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
+
+		iPixelAddr = xcoi;
+
+		for (ycoi = 0; ycoi < draw_height; ycoi++) {
+
+			int addr = (xcoi / 3) + draw_width * ycoi;
+
+			getRGB16(colour_picker[addr], &RGB);
+			frame[iPixelAddr] = RGB.g; // green
+			frame[iPixelAddr + 1] = RGB.b; // blue
+			frame[iPixelAddr + 2] = RGB.r; // red
+
+			iPixelAddr += stride;
+		}
+
+	}
+
+	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
 
 }

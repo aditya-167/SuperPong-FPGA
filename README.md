@@ -25,7 +25,7 @@ Hardware stored in the hw directory (TBD).
 
 # How to setup the Vivado project (Hardware)
 
-	Coming soon
+	Open the hw/HDMI.xpr file in Vivado 2016.4 for modifying the hardware project.
 
 # How to setup the Xilinx SDK project (Software)
 

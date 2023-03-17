@@ -1,0 +1,16 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Mar  8 20:37:21 2023
+| Host         : LAPTOP-2FCFNK7J running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_inverter_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_inverter_0_3 (xilinx.com:user:inverter:1.0 (Rev. 4)) to Vivado generation flows.
+

@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
---Date        : Tue Feb 28 22:46:11 2023
---Host        : DESKTOP-RMQ09J8 running 64-bit major release  (build 9200)
+--Date        : Wed Mar 15 20:00:49 2023
+--Host        : LAPTOP-2FCFNK7J running 64-bit major release  (build 9200)
 --Command     : generate_target hdmi_wrapper.bd
 --Design      : hdmi_wrapper
 --Purpose     : IP block netlist
@@ -80,11 +80,11 @@ architecture STRUCTURE of hdmi_wrapper is
     TMDS_OUT_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
+    push_buttons_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     hdmi_hpd : out STD_LOGIC_VECTOR ( 0 to 0 );
     reset : in STD_LOGIC;
     sys_clk_i : in STD_LOGIC;
-    hdmi_rx_txen : out STD_LOGIC_VECTOR ( 0 to 0 );
-    push_buttons_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 )
+    hdmi_rx_txen : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component hdmi;
   component IOBUF is

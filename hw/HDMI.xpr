@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Workspace_SDK_HDMI/hw/HDMI.xpr">
+<Project Version="7" Minor="17" Path="D:/PROJECTS/SuperPong-FPGA/hw/HDMI.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="1ed84a7dc2a040de8295c28d0cfe79b6"/>
@@ -21,6 +21,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../repo"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../FPGAImageProcessing/Inverter"/>
     <Option Name="IPOutputRepo" Val="$PPRDIR/../repo/cache"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -60,51 +61,52 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_rst_mig_7series_0_pxl_0/hdmi_rst_mig_7series_0_pxl_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_auto_us_0/hdmi_auto_us_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_rst_mig_7series_0_100M_0/hdmi_rst_mig_7series_0_100M_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_rgb2dvi_0_0/hdmi_rgb2dvi_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_mig_7series_0_0/hdmi_mig_7series_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_xlconcat_0/hdmi_microblaze_0_xlconcat_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_lmb_bram_0/hdmi_lmb_bram_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_ilmb_v10_0/hdmi_ilmb_v10_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_ilmb_bram_if_cntlr_0/hdmi_ilmb_bram_if_cntlr_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hdl/hdmi.hwdef"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hw_handoff/hdmi_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hw_handoff/hdmi.hwh"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hdmi_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_uartlite_0_0/hdmi_axi_uartlite_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_mem_intercon_0/hdmi_axi_mem_intercon_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_dlmb_v10_0/hdmi_dlmb_v10_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_dlmb_bram_if_cntlr_0/hdmi_dlmb_bram_if_cntlr_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_axi_periph_0/hdmi_microblaze_0_axi_periph_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_ilmb_v10_0/hdmi_ilmb_v10_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_0/hdmi_microblaze_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_mdm_1_0/hdmi_mdm_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_xlconcat_0/hdmi_microblaze_0_xlconcat_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_lmb_bram_0/hdmi_lmb_bram_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_ilmb_bram_if_cntlr_0/hdmi_ilmb_bram_if_cntlr_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_axi_intc_0/hdmi_microblaze_0_axi_intc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_mem_intercon_0/hdmi_axi_mem_intercon_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_gpio_video_0/hdmi_axi_gpio_video_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_axi_periph_0/hdmi_microblaze_0_axi_periph_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_dvi2rgb_0_0/hdmi_dvi2rgb_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_vdma_0_0/hdmi_axi_vdma_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_timer_0_0/hdmi_axi_timer_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_dynclk_0_0/hdmi_axi_dynclk_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_s03_regslice_0/hdmi_s03_regslice_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_s02_regslice_0/hdmi_s02_regslice_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_s01_regslice_0/hdmi_s01_regslice_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_s00_regslice_0/hdmi_s00_regslice_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_gpio_video_0/hdmi_axi_gpio_video_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_rst_mig_7series_0_100M_0/hdmi_rst_mig_7series_0_100M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_dma_0_0/hdmi_axi_dma_0_0.xci">
+          <Proxy FileSetName="hdmi_axi_dma_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_inverter_0_0/hdmi_inverter_0_0.xci">
+          <Proxy FileSetName="hdmi_inverter_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hdl/hdmi.vhd"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_xbar_1/hdmi_xbar_1.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_xbar_0/hdmi_xbar_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_xbar_1/hdmi_xbar_1.xci">
+          <Proxy FileSetName="hdmi_xbar_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_xbar_0/hdmi_xbar_0.xci">
+          <Proxy FileSetName="hdmi_xbar_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_xlconstant_0_0/hdmi_xlconstant_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_v_vid_in_axi4s_0_0/hdmi_v_vid_in_axi4s_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_v_tc_1_0/hdmi_v_tc_1_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_v_tc_0_0/hdmi_v_tc_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_v_axi4s_vid_out_0_0/hdmi_v_axi4s_vid_out_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_auto_ds_0/hdmi_auto_ds_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hdl/hdmi.hwdef"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hw_handoff/hdmi_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hw_handoff/hdmi.hwh"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="hdmi_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_auto_rs_w_2/hdmi_auto_rs_w_2.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_auto_us_1/hdmi_auto_us_1.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_microblaze_0_0/hdmi_microblaze_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_mdm_1_0/hdmi_mdm_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_auto_rs_w_1/hdmi_auto_rs_w_1.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_dvi2rgb_0_0/hdmi_dvi2rgb_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_vdma_0_0/hdmi_axi_vdma_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_uartlite_0_0/hdmi_axi_uartlite_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_timer_0_0/hdmi_axi_timer_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_rst_mig_7series_0_pxl_0/hdmi_rst_mig_7series_0_pxl_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_mig_7series_0_0/hdmi_mig_7series_0_0.xci">
+          <Proxy FileSetName="hdmi_mig_7series_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi.bd" FileRelPathName="ip/hdmi_rgb2dvi_0_0/hdmi_rgb2dvi_0_0.xci"/>
       </File>
       <File Path="$PPRDIR/../src/bd/hdmi/hdl/hdmi_wrapper.vhd">
         <FileInfo>
@@ -146,39 +148,33 @@
         <Option Name="SrcSet" Val="sources_1"/>
       </Config>
     </FileSet>
-    <FileSet Name="hdmi_dvi2rgb_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_dvi2rgb_0_0">
+    <FileSet Name="hdmi_mig_7series_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_mig_7series_0_0">
       <Config>
-        <Option Name="TopModule" Val="hdmi_dvi2rgb_0_0"/>
+        <Option Name="TopModule" Val="hdmi_mig_7series_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="hdmi_axi_dynclk_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_axi_dynclk_0_0">
+    <FileSet Name="hdmi_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_xbar_0">
       <Config>
-        <Option Name="TopModule" Val="hdmi_axi_dynclk_0_0"/>
+        <Option Name="TopModule" Val="hdmi_xbar_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="hdmi_rgb2dvi_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_rgb2dvi_0_0">
+    <FileSet Name="hdmi_xbar_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_xbar_1">
       <Config>
-        <Option Name="TopModule" Val="hdmi_rgb2dvi_0_0"/>
+        <Option Name="TopModule" Val="hdmi_xbar_1"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="hdmi_PmodJSTK2_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_PmodJSTK2_1_0">
+    <FileSet Name="hdmi_inverter_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_inverter_0_0">
       <Config>
-        <Option Name="TopModule" Val="hdmi_PmodJSTK2_1_0"/>
+        <Option Name="TopModule" Val="hdmi_inverter_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="hdmi_PmodJSTK2_0_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_PmodJSTK2_0_1">
+    <FileSet Name="hdmi_axi_dma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_axi_dma_0_0">
       <Config>
-        <Option Name="TopModule" Val="hdmi_PmodJSTK2_0_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="hdmi_clk_wiz_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_clk_wiz_0_0">
-      <Config>
-        <Option Name="TopModule" Val="hdmi_clk_wiz_0_0"/>
+        <Option Name="TopModule" Val="hdmi_axi_dma_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -214,7 +210,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_dvi2rgb_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_dvi2rgb_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_dvi2rgb_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_dvi2rgb_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="hdmi_mig_7series_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_mig_7series_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_mig_7series_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_mig_7series_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
@@ -222,7 +218,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_axi_dynclk_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_axi_dynclk_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_axi_dynclk_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_axi_dynclk_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="hdmi_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_xbar_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_xbar_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_xbar_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
@@ -230,7 +226,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_rgb2dvi_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_rgb2dvi_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_rgb2dvi_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_rgb2dvi_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="hdmi_xbar_1_synth_1" Type="Ft3:Synth" SrcSet="hdmi_xbar_1" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_xbar_1" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_xbar_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
@@ -238,7 +234,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_PmodJSTK2_1_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_PmodJSTK2_1_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_PmodJSTK2_1_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_PmodJSTK2_1_0_synth_1" IncludeInArchive="true">
+    <Run Id="hdmi_inverter_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_inverter_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_inverter_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_inverter_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
@@ -246,7 +242,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_PmodJSTK2_0_1_synth_1" Type="Ft3:Synth" SrcSet="hdmi_PmodJSTK2_0_1" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_PmodJSTK2_0_1" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_PmodJSTK2_0_1_synth_1" IncludeInArchive="true">
+    <Run Id="hdmi_axi_dma_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_axi_dma_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_axi_dma_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_axi_dma_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
@@ -254,15 +250,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_clk_wiz_0_0_synth_1" Type="Ft3:Synth" SrcSet="hdmi_clk_wiz_0_0" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_clk_wiz_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/hdmi_clk_wiz_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
         <Step Id="init_design"/>
@@ -281,10 +269,9 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_dvi2rgb_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_dvi2rgb_0_0" Description="Default settings for Implementation." SynthRun="hdmi_dvi2rgb_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="hdmi_mig_7series_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_mig_7series_0_0" Description="Default settings for Implementation." SynthRun="hdmi_mig_7series_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -299,7 +286,7 @@
       </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_axi_dynclk_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_axi_dynclk_0_0" Description="Default settings for Implementation." SynthRun="hdmi_axi_dynclk_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="hdmi_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_xbar_0" Description="Default settings for Implementation." SynthRun="hdmi_xbar_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -314,7 +301,7 @@
       </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_rgb2dvi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_rgb2dvi_0_0" Description="Default settings for Implementation." SynthRun="hdmi_rgb2dvi_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="hdmi_xbar_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_xbar_1" Description="Default settings for Implementation." SynthRun="hdmi_xbar_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -329,7 +316,7 @@
       </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_PmodJSTK2_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_PmodJSTK2_1_0" Description="Default settings for Implementation." SynthRun="hdmi_PmodJSTK2_1_0_synth_1" IncludeInArchive="false">
+    <Run Id="hdmi_inverter_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_inverter_0_0" Description="Default settings for Implementation." SynthRun="hdmi_inverter_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -344,22 +331,7 @@
       </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="hdmi_PmodJSTK2_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_PmodJSTK2_0_1" Description="Default settings for Implementation." SynthRun="hdmi_PmodJSTK2_0_1_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="hdmi_clk_wiz_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_clk_wiz_0_0" Description="Default settings for Implementation." SynthRun="hdmi_clk_wiz_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="hdmi_axi_dma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="hdmi_axi_dma_0_0" Description="Default settings for Implementation." SynthRun="hdmi_axi_dma_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>

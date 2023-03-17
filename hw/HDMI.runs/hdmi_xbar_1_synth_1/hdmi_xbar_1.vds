@@ -1,0 +1,96 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Wed Mar 15 20:16:55 2023
+# Process ID: 20612
+# Current directory: D:/PROJECTS/SuperPong-FPGA/hw/HDMI.runs/hdmi_xbar_1_synth_1
+# Command line: vivado.exe -log hdmi_xbar_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_xbar_1.tcl
+# Log file: D:/PROJECTS/SuperPong-FPGA/hw/HDMI.runs/hdmi_xbar_1_synth_1/hdmi_xbar_1.vds
+# Journal file: D:/PROJECTS/SuperPong-FPGA/hw/HDMI.runs/hdmi_xbar_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source hdmi_xbar_1.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:48 . Memory (MB): peak = 372.586 ; gain = 162.195
+INFO: [Synth 8-638] synthesizing module 'hdmi_xbar_1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ip/hdmi_xbar_1/synth/hdmi_xbar_1.v:60]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_axi_crossbar' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:4882]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_crossbar_sasd' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_addr_decoder' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_carry_and' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (1#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized2' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized3' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized3' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized4' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized4' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized5' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized5' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized6' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized6' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized7' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized7' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized8' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized8' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_addr_decoder' (3#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_decerr_slave' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:3500]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_decerr_slave' (4#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:3500]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_addr_arbiter_sasd' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_addr_arbiter_sasd' (5#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_splitter' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:4459]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_splitter' (6#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:4459]
+INFO: [Synth 8-638] synthesizing module 'axi_crossbar_v2_1_12_splitter__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:4459]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_splitter__parameterized0' (6#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:4459]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (7#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (7#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (7#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (7#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-638] synthesizing module 'axi_register_slice_v2_1_11_axic_register_slice' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/0b6b/hdl/axi_register_slice_v2_1_vl_rfs.v:85]
+INFO: [Synth 8-256] done synthesizing module 'axi_register_slice_v2_1_11_axic_register_slice' (8#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/0b6b/hdl/axi_register_slice_v2_1_vl_rfs.v:85]
+INFO: [Synth 8-638] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized3' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-256] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized3' (8#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/7ee0/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_crossbar_sasd' (9#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
+INFO: [Synth 8-256] done synthesizing module 'axi_crossbar_v2_1_12_axi_crossbar' (10#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/896d/hdl/axi_crossbar_v2_1_vl_rfs.v:4882]
+INFO: [Synth 8-256] done synthesizing module 'hdmi_xbar_1' (11#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ip/hdmi_xbar_1/synth/hdmi_xbar_1.v:60]
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:01:03 . Memory (MB): peak = 488.547 ; gain = 278.156
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:01:03 . Memory (MB): peak = 488.547 ; gain = 278.156
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.368 . Memory (MB): peak = 754.520 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:01:42 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:01:42 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:01:42 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:01:44 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:48 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:02:10 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:02:13 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Technology Mapping : Time (s): cpu = 00:00:44 ; elapsed = 00:02:14 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     2|
+|2     |LUT2 |    30|
+|3     |LUT3 |    42|
+|4     |LUT4 |    79|
+|5     |LUT5 |    39|
+|6     |LUT6 |   237|
+|7     |FDRE |   140|
++------+-----+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:02:15 . Memory (MB): peak = 754.520 ; gain = 544.129
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:01:53 . Memory (MB): peak = 756.617 ; gain = 468.598

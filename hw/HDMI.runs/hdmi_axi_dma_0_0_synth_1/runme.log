@@ -1,0 +1,251 @@
+
+*** Running vivado
+    with args -log hdmi_axi_dma_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_axi_dma_0_0.tcl
+
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source hdmi_axi_dma_0_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:51 . Memory (MB): peak = 368.906 ; gain = 158.512
+INFO: [Synth 8-638] synthesizing module 'hdmi_axi_dma_0_0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ip/hdmi_axi_dma_0_0/synth/hdmi_axi_dma_0_0.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'axi_dma' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:21830]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_rst_module' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:1595]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/52cb/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (1#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/52cb/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_reset' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:603]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_reset' (2#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:603]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_rst_module' (3#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:1595]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_reg_module' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:8254]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_lite_if' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:2066]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_lite_if' (4#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:2066]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_register' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:3604]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_register' (5#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:3604]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_register_s2mm' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:4837]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_register_s2mm' (6#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:4837]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_reg_module' (7#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:8254]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_mm2s_mngr' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:14884]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_smple_sm' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:11685]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_smple_sm' (8#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:11685]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_mm2s_cmdsts_if' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:13668]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_mm2s_cmdsts_if' (9#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:13668]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_mm2s_sts_mngr' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:13983]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_mm2s_sts_mngr' (10#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:13983]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_mm2s_mngr' (11#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:14884]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_sofeof_gen' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:11155]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_sofeof_gen' (12#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:11155]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_s2mm_mngr' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:20222]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_s2mm_cmdsts_if' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:18487]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_s2mm_cmdsts_if' (13#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:18487]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_s2mm_sts_mngr' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:18917]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_s2mm_sts_mngr' (14#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:18917]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_s2mm_mngr' (15#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:20222]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:48516]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_mm2s_full_wrap' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:46666]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_reset' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_reset' (16#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_cmd_status' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:2693]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo' (17#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized0' (17#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status' (18#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:2693]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rd_status_cntl' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:13741]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rd_status_cntl' (19#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:13741]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_pcc' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:7411]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:4337]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2' (20#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:4337]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:4337]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2__parameterized0' (20#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:4337]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_pcc' (21#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:7411]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_addr_cntl' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:9995]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (22#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (23#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (24#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (25#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized1' (25#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl' (26#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:9995]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rddata_cntl' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:12180]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rdmux' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:10676]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rdmux' (27#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:10676]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized0' (27#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized0' (27#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized0' (27#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized2' (27#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rddata_cntl' (28#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:12180]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rd_sf' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:20200]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized3' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized1' (28#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized1' (28#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized1' (28#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized3' (28#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_sfifo_autord' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1294]
+INFO: [Synth 8-638] synthesizing module 'sync_fifo_fg' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/5ab6/hdl/lib_fifo_v1_0_rfs.vhd:2097]
+INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg' (57#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/5ab6/hdl/lib_fifo_v1_0_rfs.vhd:2097]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord' (58#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1294]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rd_sf' (59#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:20200]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_skid_buf' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:19492]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid_buf' (60#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:19492]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mm2s_full_wrap' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:46666]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_full_wrap' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:43113]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_cmd_status__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:2693]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized4' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized4' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status__parameterized0' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:2693]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_wr_status_cntl' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:17697]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized5' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized0' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized2' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized2' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized2' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized5' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized6' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized3' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized3' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized1' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized3' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized3' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized3' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized3' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized6' (61#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wr_status_cntl' (62#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:17697]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_ibttcc' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:25723]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_ibttcc' (63#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:25723]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_realign' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:40129]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized7' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized4' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized4' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized4' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized4' (63#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized4' (63#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized4' (63#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized7' (63#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_scatter' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:38236]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_mssai_skid_buf' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:37286]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_ms_strb_set' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:35726]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_ms_strb_set' (64#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:35726]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mssai_skid_buf' (65#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:37286]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_slice' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:37975]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_slice' (66#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:37975]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized8' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized5' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized5' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f__parameterized2' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f__parameterized2' (66#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized5' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized5' (66#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized5' (66#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized5' (66#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized8' (66#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_scatter' (67#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:38236]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_realign' (68#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:40129]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_indet_btt' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:28422]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_stbs_set_nodre' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:24201]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_stbs_set_nodre' (69#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:24201]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_sfifo_autord__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1294]
+INFO: [Synth 8-638] synthesizing module 'sync_fifo_fg__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/5ab6/hdl/lib_fifo_v1_0_rfs.vhd:2097]
+INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg__parameterized0' (70#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/5ab6/hdl/lib_fifo_v1_0_rfs.vhd:2097]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord__parameterized0' (70#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1294]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_sfifo_autord__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1294]
+INFO: [Synth 8-638] synthesizing module 'sync_fifo_fg__parameterized1' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/5ab6/hdl/lib_fifo_v1_0_rfs.vhd:2097]
+INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg__parameterized1' (70#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/5ab6/hdl/lib_fifo_v1_0_rfs.vhd:2097]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord__parameterized1' (70#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1294]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_skid_buf__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:19492]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid_buf__parameterized0' (70#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:19492]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_indet_btt' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:28422]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_addr_cntl__parameterized0' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:9995]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized9' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized9' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl__parameterized0' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:9995]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_wrdata_cntl' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:15669]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized10' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized6' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized6' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized6' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized6' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized6' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized6' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/6039/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized10' (71#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:1881]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wrdata_cntl' (72#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:15669]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_skid2mm_buf' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:18990]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_wr_demux' [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:14112]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_wr_demux' (73#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:14112]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid2mm_buf' (74#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:18990]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_full_wrap' (75#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:43113]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover' (76#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/bf41/hdl/axi_datamover_v5_1_vh_rfs.vhd:48516]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma' (77#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ipshared/46c7/hdl/axi_dma_v7_1_vh_rfs.vhd:21830]
+INFO: [Synth 8-256] done synthesizing module 'hdmi_axi_dma_0_0' (78#1) [d:/PROJECTS/SuperPong-FPGA/src/bd/hdmi/ip/hdmi_axi_dma_0_0/synth/hdmi_axi_dma_0_0.vhd:128]
+Finished RTL Elaboration : Time (s): cpu = 00:03:01 ; elapsed = 00:09:10 . Memory (MB): peak = 643.555 ; gain = 433.160
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:03:01 ; elapsed = 00:09:28 . Memory (MB): peak = 643.555 ; gain = 433.160
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.388 . Memory (MB): peak = 806.383 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:03:09 ; elapsed = 00:11:12 . Memory (MB): peak = 806.383 ; gain = 595.988
+Finished Loading Part and Timing Information : Time (s): cpu = 00:03:09 ; elapsed = 00:11:12 . Memory (MB): peak = 806.383 ; gain = 595.988
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:03:09 ; elapsed = 00:11:13 . Memory (MB): peak = 806.383 ; gain = 595.988
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:03:11 ; elapsed = 00:11:19 . Memory (MB): peak = 806.383 ; gain = 595.988
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:14 ; elapsed = 00:11:29 . Memory (MB): peak = 806.383 ; gain = 595.988
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+|Module Name | RTL Object                                                                                                                                                                                                                                        | Inference      | Size (Depth x Width) | Primitives   | 
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+|axi_dma     | I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/FAMILY_SUPPORTED.I_SYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg | User Attribute | 8 x 9                | RAM32M x 2   | 
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:18 ; elapsed = 00:11:44 . Memory (MB): peak = 806.383 ; gain = 595.988
+Finished Timing Optimization : Time (s): cpu = 00:03:19 ; elapsed = 00:11:50 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished Technology Mapping : Time (s): cpu = 00:03:20 ; elapsed = 00:11:52 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished IO Insertion : Time (s): cpu = 00:03:20 ; elapsed = 00:11:53 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:20 ; elapsed = 00:11:53 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:21 ; elapsed = 00:11:53 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:21 ; elapsed = 00:11:53 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:21 ; elapsed = 00:11:54 . Memory (MB): peak = 827.840 ; gain = 617.445
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:21 ; elapsed = 00:11:54 . Memory (MB): peak = 827.840 ; gain = 617.445
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    43|
+|2     |LUT1     |    95|
+|3     |LUT2     |   174|
+|4     |LUT3     |   382|
+|5     |LUT4     |   208|
+|6     |LUT5     |   231|
+|7     |LUT6     |   375|
+|8     |MUXF7    |     7|
+|9     |RAM32M   |     2|
+|10    |RAMB36E1 |     2|
+|11    |SRL16E   |   150|
+|12    |FDR      |     8|
+|13    |FDRE     |  1768|
+|14    |FDSE     |    76|
++------+---------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:21 ; elapsed = 00:11:54 . Memory (MB): peak = 827.840 ; gain = 617.445
+synth_design: Time (s): cpu = 00:03:17 ; elapsed = 00:11:25 . Memory (MB): peak = 827.840 ; gain = 544.578

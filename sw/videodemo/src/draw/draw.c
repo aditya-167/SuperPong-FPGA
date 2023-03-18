@@ -1,6 +1,8 @@
 #include "draw.h"
 #include "../assets/title_image.h"
 #include "../assets/colour_picker.h"
+#include "../assets/player_select.h"
+#include "../assets/flexo.h"
 
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 
@@ -34,6 +36,16 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 	case 5:
 
 		DemoPrintTest5(frame, width, height, stride, pattern);
+		break;
+
+	case 6:
+
+		DemoPrintTest6(frame, width, height, stride, pattern);
+		break;
+
+	case DEMO_PATTERN_FLEXO:
+
+		DemoPrintTestFlexo(frame, width, height, stride, pattern);
 		break;
 
 	default:
@@ -300,6 +312,70 @@ void DemoPrintTest5(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
 			int addr = (xcoi / 3) + draw_width * ycoi;
 
 			getRGB16(colour_picker[addr], &RGB);
+			frame[iPixelAddr] = RGB.g; // green
+			frame[iPixelAddr + 1] = RGB.b; // blue
+			frame[iPixelAddr + 2] = RGB.r; // red
+
+			iPixelAddr += stride;
+		}
+
+	}
+
+	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
+
+}
+
+void DemoPrintTest6(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
+
+	int xcoi, ycoi;
+	int iPixelAddr;
+	int draw_width = 640;
+	int draw_height = 480;
+
+	// Helper structure
+	Color16 RGB;
+
+	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
+
+		iPixelAddr = xcoi;
+
+		for (ycoi = 0; ycoi < draw_height; ycoi++) {
+
+			int addr = (xcoi / 3) + draw_width * ycoi;
+
+			getRGB16(player_select[addr], &RGB);
+			frame[iPixelAddr] = RGB.g; // green
+			frame[iPixelAddr + 1] = RGB.b; // blue
+			frame[iPixelAddr + 2] = RGB.r; // red
+
+			iPixelAddr += stride;
+		}
+
+	}
+
+	Xil_DCacheFlushRange((unsigned int ) frame, DEMO_MAX_FRAME);
+
+}
+
+void DemoPrintTestFlexo(u8 *frame, u32 width, u32 height, u32 stride, int pattern) {
+
+	int xcoi, ycoi;
+	int iPixelAddr;
+	int draw_width = 640;
+	int draw_height = 480;
+
+	// Helper structure
+	Color16 RGB;
+
+	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
+
+		iPixelAddr = xcoi;
+
+		for (ycoi = 0; ycoi < draw_height; ycoi++) {
+
+			int addr = (xcoi / 3) + draw_width * ycoi;
+
+			getRGB16(flexo[addr], &RGB);
 			frame[iPixelAddr] = RGB.g; // green
 			frame[iPixelAddr + 1] = RGB.b; // blue
 			frame[iPixelAddr + 2] = RGB.r; // red

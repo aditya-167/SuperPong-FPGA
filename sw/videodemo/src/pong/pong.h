@@ -76,6 +76,7 @@ void shutdown(game_context* game);
 void scoreUpdate(int, int);
 void clearScreen(graphics_context* gc);
 int setup_stopwatch(XTmrCtr* TimerCounter);
+void render_score(game_context* game, graphics_context* gc);
 int start_stopwatch(XTmrCtr* TmrCtrInstancePtr);
 int end_stopwatch(XTmrCtr* TmrCtrInstancePtr);
 

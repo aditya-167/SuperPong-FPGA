@@ -170,8 +170,8 @@ void update_ball(game_context *game, GAME_STATE state, int t_elapse) {
 		//game->state = RESET;
 		ball->xVel = -(ball->xVel);
 		score_update(game->pad2, 1);
-		game->ball->x = SCREEN_WIDTH/2;
-		game->ball->y = SCREEN_HEIGHT/2;
+		game->ball->x = SCREEN_WIDTH / 2;
+		game->ball->y = SCREEN_HEIGHT / 2;
 		game->ball->xVel += 1;
 		game->ball->yVel += 1;
 
@@ -181,8 +181,8 @@ void update_ball(game_context *game, GAME_STATE state, int t_elapse) {
 		//game->state = RESET;
 		score_update(game->pad1, 1);
 		ball->xVel = -(ball->xVel);
-		game->ball->x = SCREEN_WIDTH/2;
-		game->ball->y = SCREEN_HEIGHT/2;
+		game->ball->x = SCREEN_WIDTH / 2;
+		game->ball->y = SCREEN_HEIGHT / 2;
 		game->ball->xVel += 1;
 		game->ball->yVel += 1;
 
@@ -223,9 +223,9 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 			game->state = RUNNING;
 		} else if (game->state == RUNNING) {
 			game->state = PAUSED;
+			delay(30000);
 		}
-	}
-	else if (JSTK2_getBtns(game->player_1_joystick) == 1){
+	} else if (JSTK2_getBtns(game->player_1_joystick) == 1) {
 		game->state = STOPPED;
 	}
 
@@ -255,17 +255,31 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 
 		check_interesections(game, gc);
 		render_pads(game, gc);
+		render_score(game, gc);
 
 	}
 
 }
 
-void clearScreen(graphics_context* gc){
+void render_score(game_context* game, graphics_context* gc) {
+
+	int scoreA = game->pad1->score;
+	int scoreB = game->pad2->score;
+
+	// Draw score rectangles for A
+	drawRect(25, 25, 25 * (0 + scoreA), 10, game->pad1->r, game->pad1->g,
+			game->pad1->b, gc);
+	drawRect(25, 35, 25 * (0 + scoreB), 10, game->pad2->r, game->pad2->g,
+			game->pad2->b, gc);
+
+}
+
+void clearScreen(graphics_context* gc) {
 
 	int xcoi, ycoi;
 	int iPixelAddr;
-	int draw_width = 640/1;
-	int draw_height = 480/1;
+	int draw_width = 640 / 1;
+	int draw_height = 480 / 1;
 
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
@@ -295,7 +309,7 @@ void render_pads(game_context* game, graphics_context* gc) {
 	drawRect(game->pad2->pX, game->pad2->pY, game->pad2->w, game->pad2->h, 0, 0,
 			0, gc);
 	drawRect(game->pad2->xPos, game->pad2->yPos, game->pad2->w, game->pad2->h,
-			0, 0, 255, gc);
+			game->pad2->r, game->pad2->g, game->pad2->b, gc);
 
 }
 

@@ -204,7 +204,7 @@ void DemoRun() {
 			break;
 		case '2':
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
-					dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_3);
+					dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_FLEXO);
 			break;
 		case '3':
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
@@ -242,11 +242,16 @@ void DemoRun() {
 void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 
 	// Setup joysticks
-	PmodJSTK2 joystick;
+	PmodJSTK2 joystick, joystick2;
 	// Initialise joystick
 	JSTK2_begin(&joystick, XPAR_PMODJSTK2_0_AXI_LITE_SPI_BASEADDR);
 	// Set no inversion
 	JSTK2_setInversion(&joystick, 0, 1);
+
+	// Initialise joystick
+	JSTK2_begin(&joystick2, XPAR_PMODJSTK2_1_AXI_LITE_SPI_BASEADDR);
+	// Set no inversion
+	JSTK2_setInversion(&joystick2, 0, 1);
 
 	// Setup and initialisation
 	graphics_context gc;
@@ -255,18 +260,23 @@ void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 
 	clearScreen(&gc);
 
-	game_context g;
-	initialize(&g, &joystick, NULL);
-
 	XTmrCtr TimerCounter;
 	setup_stopwatch(&TimerCounter);
 
-	int a = 0, b = 0;
-	xil_printf("Starting the game. Game STATE = %d\n", g.state);
+	// Game context structure
+	game_context g;
 
-	// Choose the player's colours
-	int colours[3] = { 0, 0, 0 };
-	chooseColours(&joystick, &(colours[0]), &gc, &g);
+	// Choose the players' colours
+	int colours[6] = { 0, 255, 0, 255, 0, 0 };
+	chooseColours(&joystick, &joystick2, &(colours[0]), &gc);
+
+	// Choose the number of players and initialise the player accordingly
+	int players = choosePlayers(&joystick, &gc);
+	if (!players)
+		initialize(&g, &joystick, &joystick2);
+	else
+		initialize(&g, &joystick, NULL);
+	xil_printf("Starting the game. Game STATE = %d\n", g.state);
 
 	// Clear screen again
 	clearScreen(&gc);
@@ -275,7 +285,12 @@ void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 	(g.pad1)->r = colours[0];
 	(g.pad1)->g = colours[1];
 	(g.pad1)->b = colours[2];
+	(g.pad2)->r = colours[3];
+	(g.pad2)->g = colours[4];
+	(g.pad2)->b = colours[5];
 
+	// counters
+	int a = 0, b = 0;
 	while (g.state != STOPPED) {
 
 		a = start_stopwatch(&TimerCounter);
@@ -313,23 +328,84 @@ void PrintMenu() {
 
 }
 
-int chooseColours(PmodJSTK2* joystick, int* colours, graphics_context* gc, game_context* game) {
+int choosePlayers(PmodJSTK2* joystick, graphics_context* gc) {
 
 	int stop = 0;
-	int r = 10;
-	int g = 10;
-	int b = 10;
+	int selection = 0;
+
+	DemoPrintTest(gc->frame, 1, 1, DEMO_STRIDE, 6);
+
+	while (!stop) {
+
+
+		xil_printf("SLECT %d\n", selection);
+
+		// Get coord values
+		int Ydata = JSTK2_getY(joystick);
+		int Xdata = JSTK2_getX(joystick);
+		delay(5000);
+
+		float yStep;
+		yStep = JOY_STEP * (((float) (Ydata - 128)) / 128);
+
+		float xStep;
+		xStep = JOY_STEP * (((float) (Xdata - 128)) / 128);
+
+		// Choose either 1 or 2 players
+		if (yStep != 0)
+			selection = 1;
+		if (xStep != 0)
+			selection = 0;
+
+		// Draw coloured rectangles
+		if (selection) {
+			drawRect(256, 204, 27, 27, 0, 0, 0, gc);
+			drawRect(256, 281, 27, 27, 255, 255, 255, gc);
+		}
+		else {
+			drawRect(256, 281, 27, 27, 0, 0, 0, gc);
+			drawRect(256, 204, 27, 27, 255, 255, 255, gc);
+		}
+
+		// Flush screen buffer
+		Xil_DCacheFlushRange((unsigned int ) gc->frame, DEMO_MAX_FRAME);
+
+		// Set led from btns and axis
+		if (JSTK2_getBtns(joystick) == 2)
+			stop = 1;
+
+	}
+
+	return selection;
+
+}
+
+int chooseColours(PmodJSTK2* joystick, PmodJSTK2* joystick2, int* colours,
+		graphics_context* gc) {
+
+	int stop = 0;
+	int r = *(colours);
+	int g = *(colours + 1);
+	int b = *(colours + 2);
+
+	int r2 = *(colours + 3);
+	int g2 = *(colours + 4);
+	int b2 = *(colours + 5);
 
 	DemoPrintTest(gc->frame, 1, 1, DEMO_STRIDE, 5);
-
 	while (!stop) {
 
 		// Get coord values
 		int Ydata = JSTK2_getY(joystick);
 		int Xdata = JSTK2_getX(joystick);
 
+		int Ydata2 = JSTK2_getY(joystick2);
+		int Xdata2 = JSTK2_getX(joystick2);
+
 		xil_printf("\n\rX: %d  Y: %d BTN: %x", Xdata, Ydata,
 				JSTK2_getBtns(joystick));
+		xil_printf("\n\rX: %d  Y: %d BTN: %x", Xdata2, Ydata2,
+				JSTK2_getBtns(joystick2));
 		delay(5000);
 
 		float yStep;
@@ -341,8 +417,18 @@ int chooseColours(PmodJSTK2* joystick, int* colours, graphics_context* gc, game_
 		r += yStep;
 		g += xStep;
 
+		float yStep2;
+		yStep2 = JOY_STEP * (((float) (Ydata2 - 128)) / 128);
+
+		float xStep2;
+		xStep2 = JOY_STEP * (((float) (Xdata2 - 128)) / 128);
+
+		r2 += yStep2;
+		g2 += xStep2;
+
 		// Draw coloured rectangle
-		drawRect(136, 331, 397, 81, r, g, b, gc);
+		drawRect(136, 331, 198, 81, r, g, b, gc);
+		drawRect(334, 331, 199, 81, r2, g2, b2, gc);
 		// Flush screen buffer
 		Xil_DCacheFlushRange((unsigned int ) gc->frame, DEMO_MAX_FRAME);
 
@@ -354,11 +440,23 @@ int chooseColours(PmodJSTK2* joystick, int* colours, graphics_context* gc, game_
 		else
 			JSTK2_setLed(joystick, r, g, b);
 
+		// Set led from btns and axis for the other joystick
+		if (JSTK2_getBtns(joystick2) == 2)
+			stop = 1;
+		else if (JSTK2_getBtns(joystick2) == 1)
+			b2++;
+		else
+			JSTK2_setLed(joystick2, r2, g2, b2);
+
 	}
 
+	// Return the colours
 	*colours = r;
 	*(colours + 1) = g;
 	*(colours + 2) = b;
+	*(colours + 3) = r2;
+	*(colours + 4) = g2;
+	*(colours + 5) = b2;
 
 	return 0;
 

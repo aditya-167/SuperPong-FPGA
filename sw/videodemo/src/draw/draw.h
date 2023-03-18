@@ -28,6 +28,7 @@
 #define DEMO_PATTERN_1 1
 #define DEMO_PATTERN_2 2
 #define DEMO_PATTERN_3 3
+#define DEMO_PATTERN_FLEXO 90
 
 // Colour Structure
 typedef struct Color16 {
@@ -56,6 +57,12 @@ void DemoPrintTest4(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 
 // Draw Test 5
 void DemoPrintTest5(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
+
+// Draw Test 6
+void DemoPrintTest6(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
+
+// Draw Test 6
+void DemoPrintTestFlexo(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 
 // Get RGB16 values
 void getRGB16(int number, Color16* clrPtr);

@@ -223,7 +223,7 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 			game->state = RUNNING;
 		} else if (game->state == RUNNING) {
 			game->state = PAUSED;
-			delay(30000);
+			delay(22000);
 		}
 	} else if (JSTK2_getBtns(game->player_1_joystick) == 1) {
 		game->state = STOPPED;

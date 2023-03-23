@@ -9,3 +9,13 @@ sw/videodemo/src/pong/main.c
 hw/HDMI.cache/*
 hw/vivado.jou
 hw/vivado.log
+
+repo/cache/*
+
+src/ip/*/**
+!src/ip/*/*.xci
+!src/ip/*/*.prj
+# Do not ignore anything in src/others
+!src/others/*
+# Do not ignore block diagram files
+!src/bd/**

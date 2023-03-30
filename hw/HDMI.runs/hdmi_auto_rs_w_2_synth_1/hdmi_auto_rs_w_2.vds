@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Sat Mar 18 19:18:50 2023
+# Process ID: 10840
+# Current directory: D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Workspace_SDK_HDMI/hw/HDMI.runs/hdmi_auto_rs_w_2_synth_1
+# Command line: vivado.exe -log hdmi_auto_rs_w_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_auto_rs_w_2.tcl
+# Log file: D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Workspace_SDK_HDMI/hw/HDMI.runs/hdmi_auto_rs_w_2_synth_1/hdmi_auto_rs_w_2.vds
+# Journal file: D:/Desktop/Angad/532/Video/Nexys-Video-HDMI-2016.4-2/Workspace_SDK_HDMI/hw/HDMI.runs/hdmi_auto_rs_w_2_synth_1\vivado.jou
+#-----------------------------------------------------------
+source hdmi_auto_rs_w_2.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:39 . Memory (MB): peak = 341.207 ; gain = 130.809
+ERROR: [Synth 8-439] module 'hdmi_auto_rs_w_2' not found
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:41 . Memory (MB): peak = 379.512 ; gain = 169.113
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details

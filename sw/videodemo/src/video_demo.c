@@ -72,6 +72,7 @@ DisplayCtrl dispCtrl;
 XAxiVdma vdma;
 VideoCapture videoCapt;
 INTC intc;
+int camera_control = 0;
 char fRefresh; //flag used to trigger a refresh of the Menu on video detect
 
 /*
@@ -215,8 +216,8 @@ void DemoRun() {
 					dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_1);
 			break;
 		case '5':
-			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
-					dispCtrl.vMode.height, DEMO_STRIDE, DEMO_PATTERN_2);
+			xil_printf("Camera control enabled.\n");
+			camera_control = 1;
 			break;
 		case '6':
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width,
@@ -277,6 +278,9 @@ void GameLoop(u8 *frame, u32 width, u32 height, u32 stride) {
 	else
 		initialize(&g, &joystick, NULL);
 	xil_printf("Starting the game. Game STATE = %d\n", g.state);
+
+	// Set camera control settings.
+	g.camera_control = camera_control;
 
 	// Clear screen again
 	clearScreen(&gc);
@@ -486,8 +490,7 @@ int JoyStickDemo() {
 		Ydata = JSTK2_getY(joystick);
 		Xdata = JSTK2_getX(joystick);
 		xil_printf("\n\rX: %d     Y: %d	   BTN: %x", Xdata, Ydata,
-				JSTK2_getBtns(joystick));
-		delay(5000);
+		JSTK2_getBtns(joystick));
 
 		// Set colour on screen
 

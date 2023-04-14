@@ -9,6 +9,9 @@ Haoran Wei
 Harsimrat Singh Wadhawan
 Yashraj Singh Dhillon
 
+# Videos
+[Click Here](./docs/README.md)
+
 # Repository Overview
 
 ## Brief Overview

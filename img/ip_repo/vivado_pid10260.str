@@ -1,0 +1,248 @@
+/*
+
+Vivado v2016.4 (64-bit)
+SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+Process ID: 10260
+
+Current time: 	3/27/23 4:43:11 PM EDT
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+Version: 10.0
+Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 2
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	D:/Vivado/Vivado_2016/Vivado/2016.4/tps/win64/jre
+
+User name: 	India
+User home directory: C:/Users/India
+User working directory: D:/PROJECTS/camera_system-master-Ori/ip_repo
+User country: 	IN
+User language: 	en
+User locale: 	en_IN
+
+RDI base root directory: D:/Vivado/Vivado_2016/Vivado
+RDI data directory: D:/Vivado/Vivado_2016/Vivado/2016.4/data
+RDI bin directory: D:/Vivado/Vivado_2016/Vivado/2016.4/bin
+
+Vivado preferences path: C:/Users/India/AppData/Roaming/Xilinx/Vivado/2016.4/vivado.ini
+Vivado layouts directory: C:/Users/India/AppData/Roaming/Xilinx/Vivado/2016.4/layouts
+
+GUI allocated memory:	234 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 437 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 30 MB (+28513kb) [00:00:11]
+// [Engine Memory]: 416 MB (+284563kb) [00:00:11]
+// bt:g (cd:JFrame):  Open Project : addNotify
+// Opening Vivado Project: D:\PROJECTS\camera_system-master-Ori\ip_repo\edit_myip_v1_0.xpr. Version: Vivado v2016.4 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/PROJECTS/camera_system-master-Ori/ip_repo/edit_myip_v1_0.xpr 
+// [GUI Memory]: 36 MB (+5296kb) [00:00:14]
+// [Engine Memory]: 437 MB (+470kb) [00:00:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 446 MB. GUI used memory: 27 MB. Current time: 3/27/23 4:43:14 PM EDT
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/PROJECTS/camera_system-master-Ori/ip_repo/edit_myip_v1_0.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/PROJECTS/camera_system-master-Ori/ip_repo/myip_1.0'. 
+// [Engine Memory]: 462 MB (+2685kb) [00:00:19]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado_2016/Vivado/2016.4/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 43 MB (+5066kb) [00:00:23]
+// [Engine Memory]: 507 MB (+23026kb) [00:00:23]
+// [Engine Memory]: 544 MB (+12353kb) [00:00:25]
+// [GUI Memory]: 50 MB (+4889kb) [00:00:25]
+// Tcl Message: open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 847.973 ; gain = 139.438 
+// Project name: edit_myip_v1_0; location: D:/PROJECTS/camera_system-master-Ori/ip_repo; part: xc7a200tsbg484-1
+dismissDialog("Open Project"); // bt:g (cd:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [GUI Memory]: 53 MB (+698kb) [00:00:30]
+// TclEventType: DG_UPDATE_GRAPH
+// Elapsed time: 240 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // T:JideMenu (CommandMenuBar:CommandBar, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Y:JMenu (JPopupMenu:JComponent, cd:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // T:JideMenu (CommandMenuBar:CommandBar, cd:JFrame)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Package IP]", 5, false); // u:K (t:D, cd:JFrame)
+// bt:g (cd:JFrame):  Open Project Manager : addNotify
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+dismissDialog("Open Project Manager"); // bt:g (cd:JFrame)
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_CURRENT_CORE
+// bt:g (cd:JFrame):  IP Packager : addNotify
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// [GUI Memory]: 59 MB (+3643kb) [00:04:40]
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::open_ipxact_file D:/PROJECTS/camera_system-master-Ori/ip_repo/myip_1.0/component.xml 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// [GUI Memory]: 65 MB (+2981kb) [00:04:41]
+// HMemoryUtils.trashcanNow. Engine heap size: 568 MB. GUI used memory: 36 MB. Current time: 3/27/23 4:47:39 PM EDT
+dismissDialog("IP Packager"); // bt:g (cd:JFrame)
+// [Engine Memory]: 576 MB (+5786kb) [00:04:41]
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Ports and Interfaces", 4); // al:k (JViewport:JComponent, cd:JFrame)
+expandTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "Clock and Reset Signals ;  ;  ;  ;  ;  ;  ;  ;  ;  ; ", 2); // K:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "S00_AXIS_CLK ; slave ;  ; false ;  ;  ;  ;  ;  ;  ; ", 4, "S00_AXIS_CLK", 0, true); // K:ab (JViewport:JComponent, cd:JFrame) - Node
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "S00_AXIS_CLK ; slave ;  ; false ;  ;  ;  ;  ;  ;  ; ", 4, "S00_AXIS_CLK", 0, true, false, false, false, true, false); // K:ab (JViewport:JComponent, cd:JFrame) - Popup Trigger - Node
+selectMenuItem(PAResourceOtoP.PortAndInterfaceFacetTable_REMOVE_INTERFACE, "Remove Interface"); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// TclEventType: PACKAGER_OBJECT_DELETE
+// Tcl Message: ipx::remove_bus_interface S00_AXIS_CLK [ipx::current_core] 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Elapsed time: 10 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // al:k (JViewport:JComponent, cd:JFrame)
+// [GUI Memory]: 71 MB (+3525kb) [00:04:59]
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Advanced ;  ;  ; false ;  ; ", 1, (String) null, 3, true); // K:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_S00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_M00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_S00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_M00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files xgui/myip_v1_0.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files bd/bd.tcl -of_objects [ipx::get_file_groups bd_tcl -of_objects [ipx::current_core]]] 
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Advanced ;  ;  ; true ;  ; ", 1, (String) null, 3, true); // K:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property is_include false [ipx::get_files hdl/myip_v1_0_S00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files hdl/myip_v1_0_M00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files hdl/myip_v1_0.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files hdl/myip_v1_0_S00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files hdl/myip_v1_0_M00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files hdl/myip_v1_0.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files xgui/myip_v1_0.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include false [ipx::get_files bd/bd.tcl -of_objects [ipx::get_file_groups bd_tcl -of_objects [ipx::current_core]]] 
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Advanced ;  ;  ; false ;  ; ", 1, (String) null, 3, true); // K:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_S00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_M00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0.v -of_objects [ipx::get_file_groups xilinx_verilogsynthesis -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_S00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0_M00_AXIS.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files hdl/myip_v1_0.v -of_objects [ipx::get_file_groups xilinx_verilogbehavioralsimulation -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files xgui/myip_v1_0.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]] 
+// Tcl Message: set_property is_include true [ipx::get_files bd/bd.tcl -of_objects [ipx::get_file_groups bd_tcl -of_objects [ipx::current_core]]] 
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "UI Layout ;  ;  ; true ;  ; ", 4, (String) null, 3, true); // K:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property is_include false [ipx::get_files xgui/myip_v1_0.tcl -of_objects [ipx::get_file_groups xilinx_xpgui -of_objects [ipx::current_core]]] 
+selectTreeTable(PAResourceEtoH.FileGroupFacetTable_FILE_GROUP_FACET_TABLE, "Block Diagram ;  ;  ; true ;  ; ", 5, (String) null, 3, true); // K:ab (JViewport:JComponent, cd:JFrame) - Node
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property is_include false [ipx::get_files bd/bd.tcl -of_objects [ipx::get_file_groups bd_tcl -of_objects [ipx::current_core]]] 
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h:k (JPanel:JComponent, cd:JFrame)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization Parameters", 3); // al:k (JViewport:JComponent, cd:JFrame)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization GUI", 6); // al:k (JViewport:JComponent, cd:JFrame)
+// [GUI Memory]: 76 MB (+1050kb) [00:05:24]
+// Elapsed time: 13 seconds
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Addressing and Memory", 5); // al:k (JViewport:JComponent, cd:JFrame)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Ports and Interfaces", 4); // al:k (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false); // K:ab (JViewport:JComponent, cd:JFrame)
+expandTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3); // K:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false, false, false, false, false, true); // K:ab (JViewport:JComponent, cd:JFrame) - Double Click
+// S:q (cd:JFrame): Edit Port: addNotify
+dismissDialog("Edit Port"); // S:q (cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false, false, false, false, true, false); // K:ab (JViewport:JComponent, cd:JFrame) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_PACKAGER_ADD_BUS_INTERFACE, "Add Bus Interface..."); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_PACKAGER_ADD_BUS_INTERFACE
+// H:q (cd:JFrame): Add Interface: addNotify
+// HOptionPane Error: "You're entered an invalid name for new IP Interface. (Invalid IP Interface Name)"
+// Elapsed time: 11 seconds
+selectButton("PAResourceEtoH.EditInterfaceDialog_YOURE_ENTERED_INVALID_NAME_FOR_NEW_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, G:JDialog)
+selectButton(PAResourceItoN.InterfaceDefinitionChooser_INTERFACE_DEFINITION_CHOOSER, (String) null); // q:a (t:s, H:q)
+// u:q (cd:JFrame): Interface Definition Chooser: addNotify
+// [GUI Memory]: 90 MB (+11199kb) [00:05:52]
+// [Engine Memory]: 612 MB (+6683kb) [00:05:52]
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "axis_rtl ; AMBA AXI4-Stream Interface", 2, "axis_rtl", 0, false); // ab:TreeTable (JViewport:JComponent, u:q)
+// [GUI Memory]: 110 MB (+15335kb) [00:06:04]
+// Elapsed time: 10 seconds
+expandTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "Signal ; ", 3); // ab:TreeTable (JViewport:JComponent, u:q)
+selectTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "clock_rtl ; Xilinx Clock Signal Interface", 4, "clock_rtl", 0, false); // ab:TreeTable (JViewport:JComponent, u:q)
+selectList(PAResourceItoN.InterfaceDefinitionChooserDialog_INTERFACE_DEFINITION_CHOOSER_LIST, "ui.data.coregen.b@600a8074", 0); // v:a (JViewport:JComponent, u:q)
+selectList(PAResourceItoN.InterfaceDefinitionChooserDialog_INTERFACE_DEFINITION_CHOOSER_LIST, "ui.data.coregen.b@600a8074", 0); // v:a (JViewport:JComponent, u:q)
+// HMemoryUtils.trashcanNow. Engine heap size: 624 MB. GUI used memory: 51 MB. Current time: 3/27/23 4:49:09 PM EDT
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, u:q)
+dismissDialog("Interface Definition Chooser"); // u:q (cd:JFrame)
+// HOptionPane Error: "You're entered an invalid name for new IP Interface. (Invalid IP Interface Name)"
+selectButton("PAResourceEtoH.EditInterfaceDialog_YOURE_ENTERED_INVALID_NAME_FOR_NEW_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, G:JDialog)
+selectButton(PAResourceItoN.InterfaceDefinitionChooser_INTERFACE_DEFINITION_CHOOSER, (String) null); // q:a (t:s, H:q)
+// u:q (cd:JFrame): Interface Definition Chooser: addNotify
+collapseTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "Signal ; ", 3); // ab:TreeTable (JViewport:JComponent, u:q)
+selectTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "axis_rtl ; AMBA AXI4-Stream Interface", 2, "axis_rtl", 0, false); // ab:TreeTable (JViewport:JComponent, u:q)
+selectTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "aximm_rtl ; AMBA AXI Interface", 1, "aximm_rtl", 0, false); // ab:TreeTable (JViewport:JComponent, u:q)
+// Elapsed time: 20 seconds
+selectTreeTable(PAResourceItoN.InterfaceDefinitionTreeTable_INTERFACES_TREE_TABLE, "axis_rtl ; AMBA AXI4-Stream Interface", 2, "axis_rtl", 0, false); // ab:TreeTable (JViewport:JComponent, u:q)
+selectList(PAResourceItoN.InterfaceDefinitionChooserDialog_INTERFACE_DEFINITION_CHOOSER_LIST, "ui.data.coregen.b@73d102e3", 1); // v:a (JViewport:JComponent, u:q)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, u:q)
+dismissDialog("Interface Definition Chooser"); // u:q (cd:JFrame)
+// HOptionPane Error: "You're entered an invalid name for new IP Interface. (Invalid IP Interface Name)"
+selectButton("PAResourceEtoH.EditInterfaceDialog_YOURE_ENTERED_INVALID_NAME_FOR_NEW_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, G:JDialog)
+// HOptionPane Error: "You're entered an invalid name for new IP Interface. (Invalid IP Interface Name)"
+// Elapsed time: 13 seconds
+selectButton("PAResourceEtoH.EditInterfaceDialog_YOURE_ENTERED_INVALID_NAME_FOR_NEW_OK", "OK"); // BasicOptionPaneUI$ButtonFactory:JButton (JPanel:JComponent, G:JDialog)
+// Elapsed time: 11 seconds
+setText(PAResourceItoN.InterfaceConfigurationPanel_NAME, "a_clk"); // M:ak (L:DefaultOverlayable, H:q)
+selectTab(PAResourceEtoH.EditInterfaceDialog_TABBED_PANE, PAResourceEtoH.EditInterfaceDialog_PARAMETERS, "Parameters", 2); // I:g (JPanel:JComponent, H:q)
+// Tcl Message: ipx::add_bus_interface a_clk [ipx::current_core] 
+// Tcl Message: set_property abstraction_type_vlnv xilinx.com:interface:axis_rtl:1.0 [ipx::get_bus_interfaces a_clk -of_objects [ipx::current_core]] 
+// Tcl Message: set_property bus_type_vlnv xilinx.com:interface:axis:1.0 [ipx::get_bus_interfaces a_clk -of_objects [ipx::current_core]] 
+// Tcl Message: set_property interface_mode master [ipx::get_bus_interfaces a_clk -of_objects [ipx::current_core]] 
+selectTab(PAResourceEtoH.EditInterfaceDialog_TABBED_PANE, PAResourceEtoH.EditInterfaceDialog_PORT_MAPPING, "Port Mapping", 1); // I:g (JPanel:JComponent, H:q)
+selectList(PAResourceItoN.InterfacePortMappingPanel_IPS_PHYSICAL_PORTS, "ui.data.coregen.cf@7fcd4ee3", 12); // N:a (JViewport:JComponent, H:q)
+selectTab(PAResourceEtoH.EditInterfaceDialog_TABBED_PANE, PAResourceEtoH.EditInterfaceDialog_PARAMETERS, "Parameters", 2); // I:g (JPanel:JComponent, H:q)
+selectTab(PAResourceEtoH.EditInterfaceDialog_TABBED_PANE, "PAResourceEtoH.EditInterfaceDialog_TABBED_PANE", PAResourceEtoH.EditInterfaceDialog_PORT_MAPPING, "Port Mapping", 1, false, true); // I:g (JPanel:JComponent, H:q) - Double Click
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// 'a' command handler elapsed time: 345 seconds
+// Tcl Message: ipx::remove_bus_interface a_clk [ipx::current_core] 
+// Elapsed time: 223 seconds
+dismissDialog("Add Interface"); // H:q (cd:JFrame)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 3000 ms.
+// Elapsed time: 356 seconds
+selectButton(PAResourceItoN.MessageBanner_SEE_LIST_OF_WARNING_MESSAGES, "1 warning"); // h:k (JPanel:JComponent, cd:JFrame)
+// [GUI Memory]: 119 MB (+3905kb) [00:17:14]
+// [GUI Memory]: 125 MB (+610kb) [00:17:14]
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager, Ports and Interfaces Wizard, [IP_Flow 19-3158] Bus Interface 'S00_AXIS': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.. ]", 3, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false); // K:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false, false, false, false, true, false); // K:ab (JViewport:JComponent, cd:JFrame) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PortAndInterfaceFacetTable_EDIT_PORT, "Edit Port..."); // ab:JMenuItem (ah:JPopupMenu, cd:JFrame)
+// S:q (cd:JFrame): Edit Port: addNotify
+dismissDialog("Edit Port"); // S:q (cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false); // K:ab (JViewport:JComponent, cd:JFrame)
+expandTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3); // K:ab (JViewport:JComponent, cd:JFrame)
+selectTreeTable(PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, "s00_axis_aclk ;  ;  ;  ; in ;  ;  ;  ;  ;  ; wire", 3, "s00_axis_aclk", 0, false, false, false, false, false, true); // K:ab (JViewport:JComponent, cd:JFrame) - Double Click
+// S:q (cd:JFrame): Edit Port: addNotify
+dismissDialog("Edit Port"); // S:q (cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager, Ports and Interfaces Wizard, [IP_Flow 19-3158] Bus Interface 'S00_AXIS': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.. ]", 3, false); // ah:i (JViewport:JComponent, cd:JFrame)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager, Ports and Interfaces Wizard, [IP_Flow 19-3158] Bus Interface 'S00_AXIS': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.. ]", 3, false, false, false, false, false, true); // ah:i (JViewport:JComponent, cd:JFrame) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager, Ports and Interfaces Wizard, [IP_Flow 19-3158] Bus Interface 'S00_AXIS': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.. ]", 3, false, false, false, false, true, false); // ah:i (JViewport:JComponent, cd:JFrame) - Popup Trigger
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, IP Packager, Ports and Interfaces Wizard, [IP_Flow 19-3158] Bus Interface 'S00_AXIS': FREQ_HZ bus parameter missing from AXI interface when interface is not associated to a clock.. ]", 3, false); // ah:i (JViewport:JComponent, cd:JFrame)

@@ -3,27 +3,13 @@
 /*	video_demo.c	--	Nexys Video HDMI demonstration 						*/
 /*																		*/
 /************************************************************************/
-/*	Author: Sam Bobrowicz												*/
-/*	Copyright 2015, Digilent Inc.										*/
-/************************************************************************/
-/*  Module Description: 												*/
-/*																		*/
-/*		This file contains code for running a demonstration of the		*/
-/*		Video input and output capabilities on the Nexys Video. It is a good	*/
-/*		example of how to properly use the display_ctrl and				*/
-/*		video_capture drivers.											*/
-/*																		*/
-/*																		*/
-/************************************************************************/
-/*  Revision History:													*/
-/* 																		*/
-/*		11/25/2015(SamB): Created										*/
-/*		03/31/2017(ArtVVB): Updated sleep functions for 2016.4			*/
-/*																		*/
-/************************************************************************/
+
+/*
+	Contains the main game logic and Microlaze code for the system.
+*/
 
 /* ------------------------------------------------------------ */
-/*				Include File Definitions						*/
+/*				Include File Definitions	*/
 /* ------------------------------------------------------------ */
 
 #include "video_demo.h"

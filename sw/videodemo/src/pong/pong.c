@@ -17,6 +17,7 @@ bool initialize(game_context* game, PmodJSTK2* player_1_joystick,
 	game->player_1_joystick = player_1_joystick;
 	game->player_2_joystick = player_2_joystick;
 	game->state = RUNNING;
+	game->camera_control = 0;
 
 	return true;
 
@@ -62,12 +63,18 @@ void score_update(player_pad* pad1, int score) {
 }
 
 // Update the CPU player's position
-void update_CPU_pad(player_pad* pad, ball_struct* ball, int t_elapse) {
+void update_CPU_pad(player_pad* pad, ball_struct* ball, int t_elapse, int camera_controlled) {
 
 	pad->pY = pad->yPos;
 	pad->pX = pad->xPos;
 
-	if (pad->xPos < SCREEN_WIDTH / 2) {
+	if (camera_controlled){
+		int val = get_number();
+		pad->yPos = val;
+		xil_printf("%d\n", pad->yPos);
+	}
+
+	else if (pad->xPos < SCREEN_WIDTH / 2) {
 		if (ball->x < SCREEN_WIDTH / 2) {
 			if (pad->yPos <= ball->y)
 				pad->yPos += PLAYERPAD_VELOCITY * t_elapse;
@@ -170,8 +177,8 @@ void update_ball(game_context *game, GAME_STATE state, int t_elapse) {
 		//game->state = RESET;
 		ball->xVel = -(ball->xVel);
 		score_update(game->pad2, 1);
-		game->ball->x = SCREEN_WIDTH/2;
-		game->ball->y = SCREEN_HEIGHT/2;
+		game->ball->x = SCREEN_WIDTH / 2;
+		game->ball->y = SCREEN_HEIGHT / 2;
 		game->ball->xVel += 1;
 		game->ball->yVel += 1;
 
@@ -181,8 +188,8 @@ void update_ball(game_context *game, GAME_STATE state, int t_elapse) {
 		//game->state = RESET;
 		score_update(game->pad1, 1);
 		ball->xVel = -(ball->xVel);
-		game->ball->x = SCREEN_WIDTH/2;
-		game->ball->y = SCREEN_HEIGHT/2;
+		game->ball->x = SCREEN_WIDTH / 2;
+		game->ball->y = SCREEN_HEIGHT / 2;
 		game->ball->xVel += 1;
 		game->ball->yVel += 1;
 
@@ -223,9 +230,9 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 			game->state = RUNNING;
 		} else if (game->state == RUNNING) {
 			game->state = PAUSED;
+			delay(1000);
 		}
-	}
-	else if (JSTK2_getBtns(game->player_1_joystick) == 1){
+	} else if (JSTK2_getBtns(game->player_1_joystick) == 1) {
 		game->state = STOPPED;
 	}
 
@@ -240,14 +247,14 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 
 		// If JST == null, player is CPU
 		if (game->player_1_joystick == NULL) {
-			update_CPU_pad(game->pad1, game->ball, t_elapse);
+			update_CPU_pad(game->pad1, game->ball, t_elapse, 0);
 		} else {
 			update_player_pad(game->player_1_joystick, game->pad1, game->ball,
 					t_elapse);
 		}
 
 		if (game->player_2_joystick == NULL) {
-			update_CPU_pad(game->pad2, game->ball, t_elapse);
+			update_CPU_pad(game->pad2, game->ball, t_elapse, game->camera_control);
 		} else {
 			update_player_pad(game->player_2_joystick, game->pad2, game->ball,
 					t_elapse);
@@ -255,17 +262,31 @@ void update(int t_elapse, game_context* game, graphics_context* gc) {
 
 		check_interesections(game, gc);
 		render_pads(game, gc);
+		render_score(game, gc);
 
 	}
 
 }
 
-void clearScreen(graphics_context* gc){
+void render_score(game_context* game, graphics_context* gc) {
+
+	int scoreA = game->pad1->score;
+	int scoreB = game->pad2->score;
+
+	// Draw score rectangles for A
+	drawRect(25, 25, 25 * (0 + scoreA), 10, game->pad1->r, game->pad1->g,
+			game->pad1->b, gc);
+	drawRect(25, 35, 25 * (0 + scoreB), 10, game->pad2->r, game->pad2->g,
+			game->pad2->b, gc);
+
+}
+
+void clearScreen(graphics_context* gc) {
 
 	int xcoi, ycoi;
 	int iPixelAddr;
-	int draw_width = 640/1;
-	int draw_height = 480/1;
+	int draw_width = 640 / 1;
+	int draw_height = 480 / 1;
 
 	for (xcoi = 0; xcoi < (draw_width * 3); xcoi += 3) {
 
@@ -295,7 +316,7 @@ void render_pads(game_context* game, graphics_context* gc) {
 	drawRect(game->pad2->pX, game->pad2->pY, game->pad2->w, game->pad2->h, 0, 0,
 			0, gc);
 	drawRect(game->pad2->xPos, game->pad2->yPos, game->pad2->w, game->pad2->h,
-			0, 0, 255, gc);
+			game->pad2->r, game->pad2->g, game->pad2->b, gc);
 
 }
 
@@ -366,6 +387,58 @@ int end_stopwatch(XTmrCtr* TmrCtrInstancePtr) {
 	int answer = XTmrCtr_GetValue(TmrCtrInstancePtr, TMRCTR_DEVICE_ID);
 	XTmrCtr_Stop(TmrCtrInstancePtr, TMRCTR_DEVICE_ID);
 	return answer;
+
+}
+
+int get_number() {
+
+	#define SIZE 32
+	char abc[4] = { 0, 0, 0, 0 };
+
+	unsigned char userInput[SIZE] = { 0 };
+	int n = 0;
+	int flag = 0;
+
+	while (flag != 2) {
+		unsigned char answer = XUartLite_RecvByte(UART_BASEADDR);
+		xil_printf("%c ", answer);
+		if (answer == 13) {
+			flag++;
+			userInput[n] = answer;
+			n++;
+		} else if (n > SIZE) {
+			flag = 2;
+		} else {
+			userInput[n] = answer;
+			n++;
+		}
+	}
+	xil_printf("\n");
+
+	int idxA = -1, idxB = -1;
+	for (int i = 0; i < SIZE; i++) {
+		if (userInput[i] == 13) {
+			if (idxA == -1) {
+				idxA = i;
+			} else {
+				idxB = i;
+				break;
+			}
+		}
+	}
+
+	if (idxA > 0 && idxB > 0) {
+
+		int k = 0;
+		for (int j = idxA + 1; j < idxA + (idxB - idxA); j++) {
+			abc[k] = userInput[j];
+			k++;
+		}
+
+	}
+
+	return (abc[0]-48)*100 + (abc[1]-48)*10 + (abc[2]-48);
+
 
 }
 

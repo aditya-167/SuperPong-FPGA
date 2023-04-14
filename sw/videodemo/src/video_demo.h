@@ -46,15 +46,19 @@ void DemoInitialize();
 void DemoRun();
 void PrintMenu();
 void DemoChangeRes();
-void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
-void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height,
+		u32 stride);
+void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight,
+		u32 destWidth, u32 destHeight, u32 stride);
 void DemoISR(void *callBackRef, void *pVideo);
 
 /* ------------------------------------------------------------ */
 int JoyStickDemo();
-void choosePlayerColour(PmodJSTK2* joystick ,int* colors);
+void choosePlayerColour(PmodJSTK2* joystick, int* colors);
 void GameLoop(u8 *frame, u32 width, u32 height, u32 stride);
-int chooseColours(PmodJSTK2* joystick, int* colours, graphics_context* gc, game_context* game);
+int chooseColours(PmodJSTK2* joystick, PmodJSTK2* joystick2, int* colours,
+		graphics_context* gc);
+int choosePlayers(PmodJSTK2* joystick, graphics_context* gc);
 /* ------------------------------------------------------------ */
 
 /************************************************************************/

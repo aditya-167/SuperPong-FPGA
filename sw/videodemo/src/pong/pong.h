@@ -14,6 +14,7 @@
 #include "xil_printf.h"
 #include "PmodJSTK2.h"
 
+#define UART_BASEADDR XPAR_UARTLITE_0_BASEADDR
 #define TMRCTR_DEVICE_ID	XPAR_TMRCTR_0_DEVICE_ID
 #define TIMER_COUNTER_0	 0
 
@@ -64,6 +65,7 @@ typedef struct game_context {
 	ball_struct* ball;
 	PmodJSTK2* player_1_joystick;
 	PmodJSTK2* player_2_joystick;
+	int camera_control;
 	enum GAME_STATE previous_state;
 	enum GAME_STATE state;
 
@@ -76,8 +78,10 @@ void shutdown(game_context* game);
 void scoreUpdate(int, int);
 void clearScreen(graphics_context* gc);
 int setup_stopwatch(XTmrCtr* TimerCounter);
+void render_score(game_context* game, graphics_context* gc);
 int start_stopwatch(XTmrCtr* TmrCtrInstancePtr);
 int end_stopwatch(XTmrCtr* TmrCtrInstancePtr);
+int get_number();
 
 // Ball functions
 void render_ball(game_context* game, graphics_context* gc);
@@ -86,7 +90,7 @@ void check_interesections(game_context* g, graphics_context* gc);
 ball_struct* init_ball(int size);
 
 // Pad function
-void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse);
+void update_CPU_pad(player_pad* pad2, ball_struct* ball, int t_elapse, int camera_controlled);
 void update_player_pad(PmodJSTK2* player, player_pad* pad1, ball_struct* ball,
 		int t_elapse);
 void render_pads(game_context* game, graphics_context* gc);

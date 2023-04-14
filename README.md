@@ -1,9 +1,35 @@
 # SuperPong-FPGA
-Course Project (ECE 532) - Classiscal Pong Game on Xillinx FPGA (with a twist)
 
+## Description
+Course Project (ECE 532) - Classiscal Pong Game on Xillinx FPGA that uses a camera to control the position of the players' racquets.
+
+# Authors
+Aditya Srichandan
+Haoran Wei
+Harsimrat Singh Wadhawan
+Yashraj Singh Dhillon
+
+# Repository Overview
+
+## Brief Overview
 Software stored in the sw directory.
+Hardware stored in the hw directory.
+Image Processing project stored in the img directory.
 
-Hardware stored in the hw directory (TBD).
+## Structure
+assets - Static images.
+
+game_source_pc - SDL based Pong game source for PC.
+
+hw - HDMI system hardware project.
+
+img - Image processing system hardware project.
+
+repo - Directory used by Vivado for caching and databasing.
+
+src - Main HDMI system and game source code.
+
+.gitignore - Contains various ignored files to stop this repository from being populated with large synthesized caches.
 
 # Requirements
 
